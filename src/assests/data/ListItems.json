@@ -1,0 +1,109 @@
+{
+    "product": [
+        {
+            "id": "1",
+            "name": "Product 1",
+            "count": "22",
+            "description": "This is a product description. Checking the overflow",
+            "image": "https://media.istockphoto.com/id/1318011733/vector/blueberries-with-green-leaves-vector-seamless-pattern.jpg?s=1024x1024&w=is&k=20&c=FDoebSqGSnr6MHXKUWfF14SJwqbQX6swXaSjl_U0gkw="
+        },
+        {
+            "id": "2",
+            "name": "Product 2",
+            "count": "18",
+            "description": "This is another product description.",
+            "image": "https://media.istockphoto.com/id/1318011733/vector/blueberries-with-green-leaves-vector-seamless-pattern.jpg?s=1024x1024&w=is&k=20&c=FDoebSqGSnr6MHXKUWfF14SJwqbQX6swXaSjl_U0gkw="
+        },
+        {
+            "id": "3",
+            "name": "Product 3",
+            "count": "56",
+            "description": "This is a third product description.",
+            "image": "https://media.istockphoto.com/id/1318011733/vector/blueberries-with-green-leaves-vector-seamless-pattern.jpg?s=1024x1024&w=is&k=20&c=FDoebSqGSnr6MHXKUWfF14SJwqbQX6swXaSjl_U0gkw="
+        },
+        {
+            "id": "4",
+            "name": "Product 4",
+            "count": "36",
+            "description": "This is a fourth product description.",
+            "image": "https://media.istockphoto.com/id/1318011733/vector/blueberries-with-green-leaves-vector-seamless-pattern.jpg?s=1024x1024&w=is&k=20&c=FDoebSqGSnr6MHXKUWfF14SJwqbQX6swXaSjl_U0gkw="
+        },
+        {
+            "id": "5",
+            "name": "Product 5",
+            "count": "78",
+            "description": "This is a fifth product description.",
+            "image": "https://media.istockphoto.com/id/1318011733/vector/blueberries-with-green-leaves-vector-seamless-pattern.jpg?s=1024x1024&w=is&k=20&c=FDoebSqGSnr6MHXKUWfF14SJwqbQX6swXaSjl_U0gkw="
+        },
+        {
+            "id": "6",
+            "name": "Product 6",
+            "count": "44",
+            "description": "This is a sixth product description.",
+            "image": "https://media.istockphoto.com/id/1318011733/vector/blueberries-with-green-leaves-vector-seamless-pattern.jpg?s=1024x1024&w=is&k=20&c=FDoebSqGSnr6MHXKUWfF14SJwqbQX6swXaSjl_U0gkw="
+        },
+        {
+            "id": "7",
+            "name": "Product 7",
+            "count": "34",
+            "description": "This is a seventh product description.",
+            "image": "https://media.istockphoto.com/id/1318011733/vector/blueberries-with-green-leaves-vector-seamless-pattern.jpg?s=1024x1024&w=is&k=20&c=FDoebSqGSnr6MHXKUWfF14SJwqbQX6swXaSjl_U0gkw="
+        },
+        {
+            "id": "8",
+            "name": "Product 8",
+            "count": "12",
+            "description": "This is an eighth product description.",
+            "image": "https://media.istockphoto.com/id/1318011733/vector/blueberries-with-green-leaves-vector-seamless-pattern.jpg?s=1024x1024&w=is&k=20&c=FDoebSqGSnr6MHXKUWfF14SJwqbQX6swXaSjl_U0gkw="
+        },
+        {
+            "id": "9",
+            "name": "Product 9",
+            "count": "57",
+            "description": "This is a ninth product description.",
+            "image": "https://media.istockphoto.com/id/1318011733/vector/blueberries-with-green-leaves-vector-seamless-pattern.jpg?s=1024x1024&w=is&k=20&c=FDoebSqGSnr6MHXKUWfF14SJwqbQX6swXaSjl_U0gkw="
+        },
+        {
+            "id": "10",
+            "name": "Product 10",
+            "count": "220",
+            "description": "This is a tenth product description.",
+            "image": "https://media.istockphoto.com/id/1318011733/vector/blueberries-with-green-leaves-vector-seamless-pattern.jpg?s=1024x1024&w=is&k=20&c=FDoebSqGSnr6MHXKUWfF14SJwqbQX6swXaSjl_U0gkw="
+        },
+        {
+            "id": "11",
+            "name": "Product 11",
+            "count": "122",
+            "description": "This is a eleventh product description.",
+            "image": "https://media.istockphoto.com/id/1318011733/vector/blueberries-with-green-leaves-vector-seamless-pattern.jpg?s=1024x1024&w=is&k=20&c=FDoebSqGSnr6MHXKUWfF14SJwqbQX6swXaSjl_U0gkw="
+        },
+        {
+            "id": "12",
+            "name": "Product 12",
+            "count": "118",
+            "description": "This is a twelfth product description.",
+            "image": "https://media.istockphoto.com/id/1318011733/vector/blueberries-with-green-leaves-vector-seamless-pattern.jpg?s=1024x1024&w=is&k=20&c=FDoebSqGSnr6MHXKUWfF14SJwqbQX6swXaSjl_U0gkw="
+        }
+    ],
+    "blogs": [
+        {"src" : "https://www.instagram.com/p/DEoXBSKhKyV/embed"},
+        {"src" : "https://www.instagram.com/p/DEjNywZSz1u/embed"},
+        {"src" : "https://www.instagram.com/p/DEXD_0sSHLY/embed"},
+        {"src" : "https://www.instagram.com/p/DEWXnFxSuie/embed"},
+        {"src" : "https://www.instagram.com/p/DET2Sg6SW3-/embed"}
+    ],
+    "similarProducts": [
+        { 
+            "id": "1",
+            "img": "https://th.bing.com/th/id/OIP.3V2fvdA6O0fSG6qGMyMeZwHaEo?rs=1&pid=ImgDetMain"
+        },
+        {
+            "id": "2", 
+            "img": "https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?cs=srgb&dl=appetizer-bowl-delicious-1640772.jpg&fm=jpg"
+        },
+        {
+            "id": "3",
+            "img": "https://images.pexels.com/photos/1128678/pexels-photo-1128678.jpeg?cs=srgb&dl=food-healthy-creative-1128678.jpg&fm=jpg"
+        }
+    ]
+}

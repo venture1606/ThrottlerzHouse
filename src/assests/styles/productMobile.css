@@ -1,0 +1,72 @@
+.ProductMobileContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.ProductMobileHomeContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    background: linear-gradient(to bottom, #4e515c 1%, #4e515cda 15%, #4e515c53, var(--background-color));
+}
+
+.ProductMobileListContainer{
+    display: flex;
+    overflow-x: scroll; /* Enable horizontal scrolling */
+    scrollbar-width: thin; /* Hide scrollbar */
+    scroll-behavior: smooth; /* Smooth scrolling */
+    padding: 8px 18px;
+    gap: 1.8rem;
+    border-radius: 8px;
+    align-items: center;
+    background-color: rgba(var(--background-color-rgb), 0.5);
+    min-height: 350px;
+    width: 75%;
+}
+
+.ProductMobileCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    flex-shrink: 0;
+    text-align: start;
+    min-width: 250px;
+    height: 300px;
+    transition: 0.5s ease;
+    border-radius: 8px;
+    color: #000000;
+    box-shadow: var(--box-shadow);
+}
+
+.ProductMobileListContainer:hover{
+    transform: scale(1.02);
+}
+
+.SliderMobileButton {
+    background: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    text-align: center;
+}
+
+.SliderMobileButton:hover {
+    background: var(--secondary-color);
+}
+
+.SliderMobileButton.left {
+    margin-left: 10px;
+}
+
+.SliderMobileButton.right {
+    margin-right: 10px;
+}

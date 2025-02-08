@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Averia+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Comic+Neue&display=swap');
+
+/* Keyframes for the slide-in effect */
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%); /* Start off-screen to the right */
+        opacity: 0; /* Invisible at the start */
+    }
+    to {
+        transform: translateX(0); /* Slide into place */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+.HomeContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 50px;
+    width: 100%;
+    overflow-x: hidden;
+    gap: 4rem;
+    height: calc(100vh - 62.5px); /* Fill remaining screen height below the navbar */
+    background: linear-gradient(to bottom right, #B5734C 50%, #4E515C 50%);
+    flex-wrap: wrap; /* Ensure wrapping on smaller screens */
+}
+
+.HomeLeftContainer {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 1rem;
+    flex: 1;
+    align-items: start;
+    padding: 4rem 0px;
+}
+
+.HomeLeftContainer .HomeTitle h3{
+    font-family: 'Anton SC';
+    font-weight: 400;
+    color: var(--secondary-color);
+    font-size: 46px;
+    width: 40%;
+    text-align: end;
+}
+
+.HomeTitle{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.HomeLeftContainer .HomeTitle .BikeAnimation{
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    pointer-events: none;
+}
+
+.BikeAnimation div{
+    width: 100% !important;
+    padding: 0 !important;
+}
+
+.HomeDescription{
+    font-family: 'Averia Libre';
+    font-weight: 400;
+    height: 15%;
+    color: #f2f2f2;
+    font-size: 16px;
+    text-align: center;
+}
+
+.HomeRightContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center the image vertically */
+    background-color: #fff;
+    padding: 4px;
+    flex: 1;
+    min-width: 300px;
+    /* max-width: 500px; */
+    box-shadow: inset 4px 6px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    height: 90%; /* Take full height of .HomeContainer */
+    background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/34a17917926931.562c0f7f02c94.jpg');
+    background-size: 100% 100%;
+    animation: slideInFromRight 1s ease-out; /* Apply the slide-in effect */
+}
+
+.HomeRightContainer img {
+    width: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure it doesn't exceed container width */
+    max-height: 100%; /* Ensure it doesn't exceed container height */
+    object-fit: contain; /* Keep the image proportional */
+}
+
+.HomeTitle h3 {
+  background: linear-gradient(to right, #4d4d4d 0, rgb(240, 204, 204) 10%, #4d4d4d 20%);
+  background-size: 200%;
+  background-position: 0;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s infinite linear;
+  animation-fill-mode: forwards;
+  -webkit-text-size-adjust: none;
+  white-space: nowrap;
+}
+
+@keyframes shine {
+  0% {
+        background-position: 0;
+    }
+  100%{
+        background-position: 200%;
+    }
+}
+
+/* Mobile View CSS */
+
+.HomeContentMobileContainer{
+    padding: 50px 0;
+}
+
+.HomeMobileContainer{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom right, #B5734C 50%, #4E515C 50%);
+}
+
+.HomeTitleMobile{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+    padding: 0px 0px 0px 1rem;
+}
+
+.HomeTitleMobile h3{
+    position: relative;
+    font-family: 'Anton SC';
+    font-weight: 400;
+    color: var(--secondary-color);
+    font-size: 46px;
+    text-align: end;
+    background: linear-gradient(to right, #4d4d4d 0, rgb(240, 204, 204) 10%, #4d4d4d 20%);
+    background-size: 200%;
+    background-position: 0;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 3s infinite linear;
+    animation-fill-mode: forwards;
+    -webkit-text-size-adjust: none;
+    white-space: nowrap;
+    margin: 0;
+}
+
+.HomeTitleMobile .BikeAnimationMobile{
+    position: absolute;
+    top: 5rem;
+    pointer-events: none;
+    height: fit-content !important;
+}
+
+.BikeAnimationMobile div{
+    width: 100% !important;
+    padding: 0 !important;
+}
+
+.AdvertisementMobile{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    height: 100%;
+}
+
+.HomeRightMobileContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    text-align: end;
+    justify-content: end; 
+    margin: 8px;
+    flex: 1;
+    min-width: 250px;
+    max-width: 500px;
+    box-shadow: inset 4px 6px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    min-height: 100px;
+    max-height: 300px;
+    background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/34a17917926931.562c0f7f02c94.jpg');
+    background-size: 100% 100%;
+    animation: slideInFromRight 1s ease-out; /* Apply the slide-in effect */
+}
+
+.HomeRightMobileContainer img {
+    width: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure it doesn't exceed container width */
+    max-height: 100%; /* Ensure it doesn't exceed container height */
+    object-fit: cover; /* Keep the image proportional */
+}
