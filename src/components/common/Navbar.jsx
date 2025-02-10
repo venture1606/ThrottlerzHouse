@@ -125,7 +125,10 @@ const Navbar = ({ onNavigate }) => {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link cursor-pointer" href="#signup">
+            <a 
+              className="nav-link cursor-pointer"
+              onClick={() => navigate("/login")}
+            >
               Sign Up
             </a>
           </li>

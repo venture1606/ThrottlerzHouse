@@ -22,21 +22,21 @@
     gap: 4rem;
     height: calc(100vh - 62.5px); /* Fill remaining screen height below the navbar */
     background: linear-gradient(to bottom right, #B5734C 50%, #4E515C 50%);
-    flex-wrap: wrap; /* Ensure wrapping on smaller screens */
+    flex-wrap: wrap;
 }
 
 .HomeLeftContainer {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: center;
     gap: 1rem;
     flex: 1;
     align-items: start;
     padding: 4rem 0px;
 }
 
-.HomeLeftContainer .HomeTitle h3{
+.HomeTitle h3{
     font-family: 'Anton SC';
     font-weight: 400;
     color: var(--secondary-color);
@@ -53,6 +53,7 @@
     flex-direction: column;
 }
 
+
 .HomeLeftContainer .HomeTitle .BikeAnimation{
     position: absolute;
     top: -20px;
@@ -63,6 +64,7 @@
 .BikeAnimation div{
     width: 100% !important;
     padding: 0 !important;
+    height: 400px !important;
 }
 
 .HomeDescription{
@@ -86,7 +88,7 @@
     /* max-width: 500px; */
     box-shadow: inset 4px 6px 8px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
-    height: 90%; /* Take full height of .HomeContainer */
+    height: 90%;
     background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/34a17917926931.562c0f7f02c94.jpg');
     background-size: 100% 100%;
     animation: slideInFromRight 1s ease-out; /* Apply the slide-in effect */
@@ -110,6 +112,34 @@
   animation-fill-mode: forwards;
   -webkit-text-size-adjust: none;
   white-space: nowrap;
+}
+
+@media (min-width: 768px) and (max-width: 1024px){
+
+    .HomeContainer{
+        /* height: 70vh; */
+    }
+
+    .HomeTitle{
+        height: 30%;
+    }
+
+    .HomeTitle h3{
+        font-size: 24px;
+        width: 40%;
+        text-align: end;
+    }
+
+    .BikeAnimation div{
+        width: 100%;
+        padding: 1rem 0 !important;
+        height: 250px !important;
+    }
+
+    .HomeRightContainer{
+        height: 50%;
+    }
+    
 }
 
 @keyframes shine {

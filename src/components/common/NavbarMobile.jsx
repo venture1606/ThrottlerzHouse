@@ -34,6 +34,7 @@ function NavbarMobile({ onNavigate }) {
     { icon: "material-symbols:media-link-outline-rounded", onClick: () => onNavigate('blogs') },
     { icon: "iconamoon:category-light", onClick: () => onNavigate('products') },
     { icon: "mdi:help-outline", onClick: () => onNavigate('help') },
+    { icon: "solar:login-outline", onClick: () => navigate('/login') },
     { icon: "ic:baseline-whatsapp", onClick: () => window.open('https://wa.me/917871269665', '_blank') },
   ];
 

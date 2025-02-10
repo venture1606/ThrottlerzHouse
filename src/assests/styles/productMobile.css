@@ -13,6 +13,7 @@
     align-items: center;
     justify-content: space-between;
     height: 100vh;
+    /* padding: 3rem 0; */
     background: linear-gradient(to bottom, #4e515c 1%, #4e515cda 15%, #4e515c53, var(--background-color));
 }
 

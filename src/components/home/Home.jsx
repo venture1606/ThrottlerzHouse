@@ -25,7 +25,7 @@ function Home() {
         <div className='HomeTitle'>
           <h3>Throttlerz<br/>House</h3>
           <div className='BikeAnimation'>
-            <Lottie options={BikeAnimation} height={400} width={600}/>
+            <Lottie options={BikeAnimation} />
           </div>
         </div>
         <p className='HomeDescription'>
