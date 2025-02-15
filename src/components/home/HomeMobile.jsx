@@ -1,37 +1,38 @@
 import React from 'react'
-import Lottie from 'react-lottie';
+import { motion } from "framer-motion";
 
 // Importing the assets
-import Advertisment from '../../assests/images/check.png';
+import HomePhotoOne from "../../assests/images/HomePhotoOne.jpg";
 
 // Importing the styles
 import '../../assests/styles/home.css';
 
-// importing the Lottie Animation
-import Bike from '../../assests/data/Bike2.json'
+const NUM_TILES = 5; // Number of slices
 
 function HomeMobile() {
 
-  const BikeAnimation = {
-    loop: true,
-    autoplay: true,
-    animationData: Bike,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice',
-    }
-  }
-
   return (
-    <div className='HomeMobileContainer'>
-      <div className='HomeTitleMobile'>
-        <h3>Throttlerz<br/>House</h3>
-        <div className='BikeAnimationMobile'>
-          <Lottie options={BikeAnimation} height={280} width={300}/>
-        </div>
-      </div>
-      <div className='AdvertisementMobile'>
-        <div className="HomeRightMobileContainer">
-          {/* <img src={Advertisment} alt="Advertisment" /> */}
+    <div className="HomeContainer">
+      {Array.from({ length: NUM_TILES }).map((_, index) => (
+        <motion.div
+          key={index}
+          className="imageSlice"
+          style={{
+            backgroundImage: `url(${HomePhotoOne})`,
+            backgroundSize: `100% ${NUM_TILES * 100}%`,
+            backgroundPositionY: `calc(${index} * 100% / ${NUM_TILES - 1})`,
+            top: `calc(${index} * 100% / ${NUM_TILES})`,
+          }}
+          initial={{ x: "-100%", opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: index * 0.3, duration: 0.9, ease: "easeOut" }}
+        />
+      ))}
+      <div className="HomeLeftContainer">
+        <div className="HomeTitle">
+          <h3>
+            Throttlerz<br />House
+          </h3>
         </div>
       </div>
     </div>

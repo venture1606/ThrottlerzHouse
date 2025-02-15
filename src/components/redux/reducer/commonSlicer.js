@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    mode: false,
+    mode: true,
 };
 
 export const indicationSlice = createSlice({

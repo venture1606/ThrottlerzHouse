@@ -36,10 +36,14 @@ const HomeContent = () => {
         <Blogs />
     </div>
     <div ref={helpRef}>
-        <Help />
-    </div>
-    <div className="toggle-button">
-        <ToggleButton />
+        <Help
+            onNavigate={(section) => {
+            if (section === "home" && homeRef.current) homeRef.current.scrollIntoView({ behavior: "smooth" });
+            if (section === "products" && productsRef.current) productsRef.current.scrollIntoView({ behavior: "smooth" });
+            if (section === "blogs" && blogsRef.current) blogsRef.current.scrollIntoView({ behavior: "smooth" });
+            if (section === "help" && helpRef.current) helpRef.current.scrollIntoView({ behavior: "smooth" });
+        }}
+        />
     </div>
     <div className='toggle-whatsapp cursor-pointer ButtonStyle' onClick={() => window.open('https://wa.me/917871269665', '_blank')}>
         <Icon icon="ic:baseline-whatsapp" className='Icon'/>

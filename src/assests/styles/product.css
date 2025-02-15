@@ -3,8 +3,7 @@
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    height: 100vh;
-    background: linear-gradient(to bottom, #4e515c 1%, #4e515cda 15%, #4e515c53, var(--background-color));
+    padding: 5rem 0;
 }
 
 .ProductListContainer {
@@ -12,6 +11,7 @@
     overflow-x: scroll; /* Enable horizontal scrolling */
     scrollbar-width: thin; /* Hide scrollbar */
     scroll-behavior: smooth; /* Smooth scrolling */
+    scrollbar-color: var(--third-color) var(--fourth-color);
     padding: 10px 18px;
     gap: 1.8rem;
     border-radius: 8px;
@@ -65,7 +65,7 @@
 }
 
 .SliderButton {
-    background: var(--primary-color);
+    background: var(--fourth-color);
     color: var(--text-color);
     border: none;
     border-radius: 50%;

@@ -28,7 +28,7 @@ function App() {
   }
 
   return (
-    <Router>
+    <Router className="CommonStyle">
       <Routes>
         <Route path='/' element={isMobile ? <HomeContentMobile /> : <HomeContent />}/>
         <Route path='/product' element={ isMobile ? <ProductMobile /> : <Product />} />

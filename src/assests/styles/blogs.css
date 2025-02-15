@@ -1,12 +1,13 @@
 .BlogsContainer{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     /* height: calc(100vh + 62.5px); */
     margin: 0 2rem;
-    padding: 30px 20px;
+    padding: 30px 15px;
     border-radius: var(--border-radius);
-    background: linear-gradient(135deg, #cbf4df, #f0fcf5);
+    background-color: var(--fourth-color);
+    /* background: linear-gradient(135deg, #cbf4df, #f0fcf5); */
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
@@ -52,27 +53,19 @@
 
 .BlogsVideosContainer{
     display: flex;
-    flex-direction: column;
     align-items: center;
-    border: 10px solid #000000;
-    padding: 1px;
-    border-radius: 24px;
+    gap: 1rem;
 }
 
-.BlogsVideosContainer iframe {
-    max-width: 300px;
-    max-height: 570px;
-    overflow: hidden;
-    scrollbar-width: none; /* Hides the scrollbar in Firefox */
-    -ms-overflow-style: none; /* Hides the scrollbar in IE */
+.BlogsVideosContainer video {
     border: none;
     border-radius: var(--border-radius);
 }
 
-.BlogsVideosContainer iframe::-webkit-scrollbar {
-    display: none; /* Hides the scrollbar in webkit browsers */
-    width: 0; /* For Chrome, Safari, and Opera */
-}  
+.BlogsVideosContainer video:hover, .BlogsVideosContainer video:active {
+    transform: scale(1.1);
+    transition: transform 0.8s ease;
+}
 
 .BlogsNavigationContainer{
     display: flex;

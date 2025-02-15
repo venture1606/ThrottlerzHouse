@@ -45,7 +45,7 @@ function NavbarMobile({ onNavigate }) {
           <img src={Logo} alt="logo" />
           <Lottie options={BikeAnimation} height={50} width={120} />
         </div>
-        <ToggleButton />
+        {/* <ToggleButton /> */}
       </div>
       <div className='NavbarMobileContainer'>
         {icons.map((item, index) => (
