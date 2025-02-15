@@ -27,8 +27,7 @@ function Card({ card }) {
         style={{
             backgroundImage: `url(${card.img})`,
             backgroundSize: "cover",
-            backgroundPosition: "center",
-            opacity: isHovered ? 0.8 : 1
+            backgroundPosition: "center"
         }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
