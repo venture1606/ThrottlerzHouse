@@ -1,0 +1,141 @@
+  
+.Card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    height: 300px;
+    /* width: 100%; */
+}
+  
+.Card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.WishIcon{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--fourth-color);
+    padding: 0.5rem;
+    border-radius: 100%;
+    font-size: 1.2rem;
+    color: rgb(252, 45, 45);
+}
+
+.CardDetailsContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.2rem;
+    background-color: rgba(var(--fourth-color-rgb), 0.9);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+}
+
+.CardDetailsContainer h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* width: 100%; */
+}
+
+.Description{
+    font-size: 0.8rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* width: 100%; */
+}
+
+.CountContainer{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.Price{
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+}
+
+.Price span{
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.Price del{
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.Count span{
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.StarRating {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 10px;
+    align-items: end;
+}
+
+
+.AddToCart {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 0.5rem;
+    border-radius: 100%;
+    background-color: var(--fourth-color);
+}
+
+.AddToCart .Icon{
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.ViewButton{
+    position: absolute;
+    bottom: -30px; /* Start outside the container */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    padding: 8px;
+    background-color: var(--primary-color);
+    border-radius: var(--border-radius);
+    color: var(--fourth-color);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    animation: slide-up 0.5s ease-out forwards;
+}
+
+@keyframes slide-up {
+    from {
+      bottom: -50px;
+      opacity: 0;
+    }
+    to {
+      bottom: 10px; /* Adjust as needed */
+      opacity: 1;
+    }
+  }
+
+.Card:hover .ViewButton {
+    display: block;
+}

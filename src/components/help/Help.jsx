@@ -26,7 +26,7 @@ function Help({ onNavigate }) {
             <span onClick={() => onNavigate('home')}>HOME</span>
             <span onClick={() => navigate('/product')}>PRODUCTS</span>
             <span onClick={() => onNavigate('blogs')}>BLOGS</span>
-            <span onClick={() => onNavigate('products')}>CATEGORY</span>
+            <span onClick={() => onNavigate('productHome')}>CATEGORY</span>
             <span onClick={() => onNavigate('help')}>ABOUT US</span>
             <span onClick={() => navigate('/cart')}>CART</span>
         </div>

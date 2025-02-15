@@ -1,0 +1,87 @@
+.CategoryPage {
+    /* text-align: center; */
+}
+  
+.CategoryContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 20px;
+}
+
+.CategoryNavbarContainer{
+    padding: 0.4rem 1rem;
+    background-color: var(--fourth-color);
+    border-radius: var(--border-radius);
+}
+
+.navbar-nav{
+    gap: 0.5rem;
+}
+
+.nav-link{
+    color: var(--primary-color) !important;
+}
+
+.nav-link:hover{
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+.dropdown-toggle::after{
+    vertical-align: .120em !important;
+    margin-left: 8px !important;
+}
+
+.CategoryMenuContainer{
+    padding: 0 1rem;
+    background-color: var(--fourth-color);
+}
+
+.MenuContainer{
+    padding: 5px;
+    color: var(--text-color) !important;
+}
+
+.MenuContainer:hover{
+    background-color: transparent;
+    transform: scale(1.1);
+    color: var(--primary-color) !important;
+}
+
+.OfferContainer{
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+    max-height: 200px;
+    width: 100%;
+    border-radius: var(--border-radius);
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    margin: 0.5rem 0;
+    padding: 2rem;
+    color: var(--secondary-color);
+}
+
+.OfferContainer h3{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.OfferContainer span{
+    width: 30%;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--primary-color);
+}
+
+.CategoryGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+.CategoryButtons {
+    margin-top: 20px;
+}
+  

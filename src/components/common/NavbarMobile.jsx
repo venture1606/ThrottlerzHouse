@@ -30,12 +30,12 @@ function NavbarMobile({ onNavigate }) {
 
   const icons = [
     { icon: "proicons:home", onClick: () => onNavigate('home') },
-    { icon: "mynaui:shopping-bag", onClick: () => navigate('/product') },
+    { icon: "mynaui:shopping-bag", onClick: () => navigate('/category') },
     { icon: "material-symbols:media-link-outline-rounded", onClick: () => onNavigate('blogs') },
-    { icon: "iconamoon:category-light", onClick: () => onNavigate('products') },
+    { icon: "iconamoon:category-light", onClick: () => onNavigate('productHome') },
     { icon: "mdi:help-outline", onClick: () => onNavigate('help') },
     { icon: "solar:login-outline", onClick: () => navigate('/login') },
-    { icon: "ic:baseline-whatsapp", onClick: () => window.open('https://wa.me/917871269665', '_blank') },
+    { icon: "ic:baseline-whatsapp", onClick: () => window.open('https://wa.me/918248897561', '_blank') },
   ];
 
   return (

@@ -3,6 +3,9 @@ import { HashRouter as Router, Route, Routes, Navigate } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
+import Category from './components/category/Category';
+import CategoryMobile from './components/category/CategoryMobile';
+
 import Product from './components/product/Product';
 import ProductMobile from './components/product/ProductMobile';
 
@@ -33,6 +36,7 @@ function App() {
         <Route path='/' element={isMobile ? <HomeContentMobile /> : <HomeContent />}/>
         <Route path='/product' element={ isMobile ? <ProductMobile /> : <Product />} />
         <Route path='/login' element={isMobile ? <LoginMobile /> : <Login />} />
+        <Route path='/category' element={isMobile ? <CategoryMobile /> : <Category />} />
       </Routes>
     </Router>
   );

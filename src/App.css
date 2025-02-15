@@ -13,7 +13,7 @@
   /* --fifth-color: #2f2f2f; choosen - #2f2f2f */
   --background-color: #282525; /* Very dark background */
   --text-color: #e4e4e4; /* Light gray text for better contrast */
-  --primary-color-rgb: 33, 37, 31;
+  --fourth-color-rgb: 24, 28, 20;
   --background-color-rgb: 40, 37, 37;
   --box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
   --button-box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.075);
@@ -46,7 +46,7 @@
 }
 
 .App{
-  position: relative;
+  /* position: relative; */
   color: var(--text-color);
   background-color: var(--background-color);
   scrollbar-width: thin;

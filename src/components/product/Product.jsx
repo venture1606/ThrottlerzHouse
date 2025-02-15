@@ -39,7 +39,7 @@ function Product() {
         <Icon
           icon="proicons:home"
           className="Icon"
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/category")}
         />
       </div>
       <div className="ProductDetailsContainer">

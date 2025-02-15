@@ -183,49 +183,48 @@ const Navbar = ({ onNavigate }) => {
     };
   }, []);
 
+const handleNavigate = (path, scrollToSection) => {
+    navigate(path, { state: { scrollTo: scrollToSection } });
+  };
+
   return (
     <div className="NavbarContainer">
-      <div className="NavbarLogoContainer" onClick={Home}>
+      {/* Logo */}
+      <div className="NavbarLogoContainer cursor-pointer" onClick={() => handleNavigate("/", "home")} title="Click to view Home Page">
         <img src={Logo} alt="logo" />
         <Lottie options={BikeAnimation} height={50} width={120} />
       </div>
-      <div className='HeaderContainer'>
-            <nav ref={navRef}>
-                <ul>
-                  <li>
-                      <button onClick={() => onNavigate('products') }>
-                        CATEGORY
-                      </button>
-                  </li>
-                  <li>
-                    <button onClick={() => navigate('/product') }>
-                      PRODUCT
-                    </button>
-                  </li>
-                  <li>
-                      <button onClick={() => onNavigate('blogs') }>
-                        BLOGS
-                      </button>
-                  </li>
-                  <li>
-                      <button onClick={() => navigate('/service') }>
-                        SERVICES
-                      </button>
-                  </li>
-                  <li>
-                      <button onClick={() => onNavigate('help') }>
-                        CONTACT
-                      </button>
-                  </li>
-                </ul>
-                <div ref={activeElementRef} className="active-element"></div>
-            </nav>
+
+      {/* Navigation Links */}
+      <div className="HeaderContainer">
+        <nav ref={navRef}>
+          <ul>
+            <li>
+              <button onClick={() => handleNavigate("/", "productHome")}>CATEGORY</button>
+            </li>
+            <li>
+              <button onClick={() => navigate("/category")}>PRODUCTS</button>
+            </li>
+            <li>
+              <button onClick={() => handleNavigate("/", "blogs")}>BLOGS</button>
+            </li>
+            <li>
+              <button onClick={() => navigate("/service")}>SERVICES</button>
+            </li>
+            <li>
+              <button onClick={() => handleNavigate("/", "help")}>CONTACT</button>
+            </li>
+          </ul>
+          <div ref={activeElementRef} className="active-element"></div>
+        </nav>
       </div>
-      <div className='SearchContainer'>
-          <Icon icon="material-symbols:search-rounded" onClick={() => setShowPopup(true)} className='SearchIcon'/>
-          {showPopup && <SearchBar onClose={() => setShowPopup(false)} />}
-          <Icon icon="icon-park-outline:like" className='SearchIcon' onClick={() => navigate('/cart')}/>
-          <Icon icon="solar:user-outline" className='Icon' onClick={() => navigate('/login')}/>
+
+      {/* Search, Cart & User Icons */}
+      <div className="SearchContainer">
+        <Icon icon="material-symbols:search-rounded" onClick={() => setShowPopup(true)} className="SearchIcon" />
+        {showPopup && <SearchBar onClose={() => setShowPopup(false)} />}
+        <Icon icon="icon-park-outline:like" className="SearchIcon" onClick={() => navigate("/cart")} />
+        <Icon icon="solar:user-outline" className="Icon" onClick={() => navigate("/login")} />
       </div>
     </div>
   );
