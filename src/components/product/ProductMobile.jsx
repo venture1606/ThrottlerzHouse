@@ -11,13 +11,6 @@ function ProductMobile() {
 
   return (
     <div className='ProductMobileContainer'>
-        <div className="BackButtonContainer cursor-pointer ButtonStyle">
-            <Icon
-                icon="proicons:home"
-                className="Icon"
-                onClick={() => navigate("/")}
-            />
-        </div>
         This page is under construction. Please visit the desktop version of the website.
     </div>
   )
