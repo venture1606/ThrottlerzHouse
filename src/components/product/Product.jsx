@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { useNavigate } from "react-router-dom";
 
@@ -19,14 +19,12 @@ function Product() {
   const [quantity, setQuantity] = useState(1);
   const [cart, setCart] = useState(true);
   const [wishlist, setWishlist] = useState(false);
-  const [iconName, setIconName] = useState("solar:cart-check-bold");
   const [selectedCategory, setSelectedCategory] = useState(null); // State to manage selected category
 
   // Update the icon based on the cart state
   useEffect(() => {
-    setIconName(cart ? "solar:cart-check-bold" : "solar:cart-cross-bold");
     window.scrollTo(0, 0);
-  }, [cart]);
+  }, []);
 
   // Ensure the quantity is never less than 1
   const handleQuantityChange = (change) => {
@@ -38,6 +36,15 @@ function Product() {
     setSelectedCategory(category);
     console.log(`Selected category: ${category}`);
   };
+
+  const toggleCart = useCallback(() => {
+    setCart((prevCart) => !prevCart);
+  }, []);
+  
+  // Function to toggle the wishlist state
+  const toggleWishlist = useCallback(() => {
+      setWishlist((prevWishlist) => !prevWishlist);
+  }, []);
 
   return (
     <div className="ProductReviewContainer">
@@ -58,7 +65,7 @@ function Product() {
                   <span
                     key={category}
                     className={`CategoryTag cursor-pointer ${
-                      selectedCategory === category ? "active" : ""
+                      selectedCategory === category ? "activeTag" : ""
                     }`}
                     onClick={() => handleCategorySelect(category)}
                   >
@@ -77,11 +84,7 @@ function Product() {
             <div className="ProductRatingContainer">
               <button className="ButtonStyle">Write a review</button>
               <div className="ProductRating">
-                <Icon icon="material-symbols:star-rounded" className="Icon" />
-                <Icon icon="material-symbols:star-rounded" className="Icon" />
-                <Icon icon="material-symbols:star-rounded" className="Icon" />
-                <Icon icon="material-symbols:star-rounded" className="Icon" />
-                <Icon icon="material-symbols:star-half-rounded" className="Icon" />
+                <StarRating rating={4.5} />
                 <span>4.5</span>
               </div>
             </div>
@@ -123,24 +126,23 @@ function Product() {
               </div>
               <div
                 className="AddToCartButton cursor-pointer ButtonStyle"
-                onClick={() => setCart(!cart)}
+                onClick={toggleCart}
               >
-                <Icon icon={iconName} className="Icon" />
-                <span>Add to wishlist</span>
+                <Icon
+                    icon={cart ? "solar:cart-check-bold" : "solar:cart-cross-bold"}
+                    className="Icon"
+                />
+                <span>{cart ? "Remove from Cart" : "Add to Cart"}</span>
               </div>
             </div>
             <div
               className="WishlistButton cursor-pointer ButtonStyle"
-              onClick={() => setWishlist(!wishlist)}
+              onClick={toggleWishlist}
             >
-              {wishlist ? (
-                <Icon icon="material-symbols:favorite-rounded" className="Icon" />
-              ) : (
-                <Icon
-                  icon="material-symbols:favorite-outline-rounded"
+              <Icon
+                  icon={wishlist ? "material-symbols:favorite-rounded" : "material-symbols:favorite-outline-rounded"}
                   className="Icon"
-                />
-              )}
+              />
             </div>
           </div>
         </div>

@@ -33,6 +33,24 @@
     gap: 0.5rem;
 }
 
-.ReviewContent span{
+.ReviewContent p{
     font-size: clamp(0.5rem, 1vw, 1rem);
+}
+
+/* mobile styles */
+@media screen and (max-width: 991px){
+    .ReviewCardContainer{
+        width: 100%;
+    }
+
+    .ReviewContent p{
+        font-size: clamp(0.7rem, 1vw, 1rem);
+    }
+
+    .ReviewContentContainer .StarRating{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 0.5rem;
+    }
 }

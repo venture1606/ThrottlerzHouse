@@ -203,7 +203,7 @@
 
 /* mobile styles */
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
     .HelpMobileContainer{
         display: flex;
         flex-direction: column;

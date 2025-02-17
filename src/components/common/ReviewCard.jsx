@@ -21,13 +21,13 @@ function ReviewCard({ data }) {
         </div>
         <div className='ReviewContentContainer'>
             <div className='StarRating'> {/* style at card.css */}
-                <span><StarRating rating={data.rating} /></span>
+                <span><StarRating rating={data.rating} /> {data.rating}</span>
                 <span>{data.date}</span>
             </div>
             <div className='ReviewContent'>
-                <span>
+                <p>
                     {data.review}
-                </span>
+                </p>
             </div>
         </div>
     </div>

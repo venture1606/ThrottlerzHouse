@@ -143,11 +143,11 @@
     margin: 2px;
 }
 
-.active{
-    color: var(--fourth-color);
+.activeTag{
+    color: var(--primary-color);
     border-radius: var(--border-radius);
     opacity: 1;
-    background-color: var(--fifth-color);
+    background-color: var(--secondary-color);
 }
 
 .ProductRatingContainer{

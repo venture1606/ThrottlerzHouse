@@ -116,7 +116,7 @@
 }
 
 /* for mobile */
-@media only screen and (max-width: 768px) {
+@media screen and (max-width: 991px) {
     .BlogsNavigationContainer{
         display: flex;
         flex-direction: row;
