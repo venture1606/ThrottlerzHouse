@@ -27,11 +27,11 @@ function Help() {
         </div>
         <div className='QuickLinksContainer'>
             <h3>QUICK LINKS</h3>
-            <span onClick={() => handleNavigate('home')}>HOME</span>
-            <span onClick={() => navigate('/product')}>PRODUCTS</span>
-            <span onClick={() => handleNavigate('blogs')}>BLOGS</span>
-            <span onClick={() => handleNavigate('productHome')}>CATEGORY</span>
-            <span onClick={() => handleNavigate('help')}>ABOUT US</span>
+            <span onClick={() => handleNavigate( '/', 'home')}>HOME</span>
+            <span onClick={() => navigate('/category')}>PRODUCTS</span>
+            <span onClick={() => handleNavigate('/', 'blogs')}>BLOGS</span>
+            <span onClick={() => handleNavigate('/', 'productHome')}>CATEGORY</span>
+            <span onClick={() => handleNavigate('/', 'help')}>ABOUT US</span>
             <span onClick={() => navigate('/cart')}>CART</span>
         </div>
         <div className='ServicesContainer'>

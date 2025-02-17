@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { gsap } from 'gsap';
 
-import $ from "jquery";
 import Lottie from "react-lottie";
 import { Icon } from "@iconify/react/dist/iconify.js";
 
