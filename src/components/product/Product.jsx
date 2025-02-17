@@ -19,6 +19,7 @@ function Product() {
   // Update the icon based on the cart state
   useEffect(() => {
     setIconName(cart ? "solar:cart-check-bold" : "solar:cart-cross-bold");
+    window.scrollTo(0, 0);
   }, [cart]);
 
   // Ensure the quantity is never less than 1

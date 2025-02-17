@@ -37,25 +37,24 @@ const HomeContent = () => {
   return (
     <div className="App">
       {/* Navbar */}
-      <Navbar />
 
       {/* Home Section */}
-      <div ref={homeRef}>
+      <div id="home" ref={homeRef}>
         <Home />
       </div>
 
       {/* Product Section */}
-      <div ref={productsRef}>
+      <div id="productHome" ref={productsRef}>
         <ProductHome />
       </div>
 
       {/* Blogs Section */}
-      <div ref={blogsRef}>
+      <div id="blogs" ref={blogsRef}>
         <Blogs />
       </div>
 
       {/* Help Section */}
-      <div ref={helpRef}>
+      <div id="help" ref={helpRef}>
         <Help />
       </div>
 

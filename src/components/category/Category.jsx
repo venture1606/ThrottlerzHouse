@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Navbar from "../common/Navbar";
@@ -17,11 +17,12 @@ const Category = () => {
   const navigate = useNavigate();
   const { cards } = ListItems;
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="CategoryPage">
-      {/* Navbar */}
-      <Navbar />
-
       {/* Main Content */}
       <div className="CategoryContainer">
         <h1>All Categories</h1>

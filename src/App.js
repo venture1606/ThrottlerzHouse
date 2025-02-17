@@ -18,6 +18,8 @@ import HomeContentMobile from './components/home/HomeContentMobile';
 import Login from './components/login/Login';
 import LoginMobile from './components/login/LoginMobile';
 
+import Navbar from './components/common/Navbar';
+
 import './App.css';
 import { useSelector } from 'react-redux';
 import { useBreakpointValue } from '@chakra-ui/react';
@@ -35,6 +37,9 @@ function App() {
 
   return (
     <Router className="CommonStyle">
+
+      <Navbar />
+
       <Routes>
         <Route path='/' element={isMobile ? <HomeContentMobile /> : <HomeContent />}/>
         <Route path='/product' element={ isMobile ? <ProductMobile /> : <Product />} />

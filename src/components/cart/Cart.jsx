@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 // importing components
@@ -14,6 +14,10 @@ function Cart() {
 
     const { cards } = ListItems;
     const navigate = useNavigate();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
   return (
     <div className='CartContainer'>
