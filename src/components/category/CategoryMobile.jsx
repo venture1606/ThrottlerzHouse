@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 // importing components
@@ -11,6 +11,10 @@ function CategoryMobile() {
 
     const navigate = useNavigate();
     const { cards } = ListItems;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className='CategoryMobileContainer'>
@@ -84,7 +88,7 @@ function CategoryMobile() {
                 ))
             }
         </div>
-        
+
         <button className='btn btn-primary' onClick={() => navigate('/product')}>Single Product</button>
     </div>
   )
