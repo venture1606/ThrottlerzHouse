@@ -2,13 +2,19 @@ import React, { useState, useEffect } from "react";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { useNavigate } from "react-router-dom";
 
+// importing components
+import ReviewCard from "../common/ReviewCard";
+import StarRating from "../common/StarRating";
+
 // importing Image
 import ProductImage from "../../assests/images/ProductImage.png";
+
+// importing data
 import ListItems from "../../assests/data/ListItems.json";
 
 function Product() {
   const navigate = useNavigate();
-  const { similarProducts } = ListItems;
+  const { similarProducts, reviews } = ListItems;
 
   const [quantity, setQuantity] = useState(1);
   const [cart, setCart] = useState(true);
@@ -30,119 +36,166 @@ function Product() {
   // Handle category selection
   const handleCategorySelect = (category) => {
     setSelectedCategory(category);
-    console.log(`Selected category: ${category}`); // Log the selected category for backend integration
-    // Here you can send the selected category to the backend via an API call if needed
+    console.log(`Selected category: ${category}`);
   };
 
   return (
-    <div className="ProductContainer">
-      <div className="BackButtonContainer cursor-pointer ButtonStyle">
-        <Icon
-          icon="proicons:home"
-          className="Icon"
-          onClick={() => navigate("/category")}
-        />
-      </div>
-      <div className="ProductDetailsContainer">
-        <div className="ProductContentContainer">
-          <h2>Apple Watch Series 7</h2>
-          <div className="ProductDescriptionContainer">
-            Product Description: <br />
-            The Apple Watch Series 7 is a powerful and stylish smartwatch that
-            offers a range of features, including GPS navigation, fitness
-            tracking, and health monitoring.
-          </div>
-          <div className="ProductCategoryContainer">
-            <span>Smartwatches</span>
-            <div className="ProductCategoryTagsContainer">
-              {["Series 7", "GPS", "Water Resistant"].map((category) => (
-                <span
-                  key={category}
-                  className={`CategoryTag cursor-pointer ${
-                    selectedCategory === category ? "active" : ""
-                  }`}
-                  onClick={() => handleCategorySelect(category)}
-                >
-                  {category}
-                </span>
-              ))}
+    <div className="ProductReviewContainer">
+      <div className="ProductContainer">
+        <div className="ProductDetailsContainer">
+          <div className="ProductContentContainer">
+            <h2>Apple Watch Series 7</h2>
+            <div className="ProductDescriptionContainer">
+              Product Description: <br />
+              The Apple Watch Series 7 is a powerful and stylish smartwatch that
+              offers a range of features, including GPS navigation, fitness
+              tracking, and health monitoring.
             </div>
-          </div>
-          <div className="ProductFeaturesContainer">
-            Product Features: <br />
-            Feature are briefly written below the page.
-          </div>
-          <span>
-            $399.00 <del>$499.00</del> <b>20% off</b> <br />
-          </span>
-          <div className="ProductRatingContainer">
-            <button className="ButtonStyle">Write a review</button>
-            <div className="ProductRating">
-              <Icon icon="material-symbols:star-rounded" className="Icon" />
-              <Icon icon="material-symbols:star-rounded" className="Icon" />
-              <Icon icon="material-symbols:star-rounded" className="Icon" />
-              <Icon icon="material-symbols:star-rounded" className="Icon" />
-              <Icon icon="material-symbols:star-half-rounded" className="Icon" />
-              <span>4.5</span>
-            </div>
-          </div>
-        </div>
-        <div className="SimilarProductsContainer">
-          {similarProducts.map((item, index) => (
-            <div key={index} className="SimilarProduct cursor-pointer">
-              <img src={item.img} alt="Product" />
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="ProductImageContainer">
-        <div className="ProductNavigationContainer">
-          <div className="ProductNavigationButton cursor-pointer ButtonStyle">
-            <Icon icon="carbon:chevron-left" className="Icon" />
-          </div>
-          <div className="ProductNavigationButton cursor-pointer ButtonStyle">
-            <Icon icon="carbon:chevron-right" className="Icon" />
-          </div>
-        </div>
-        <img src={ProductImage} alt="Product" />
-        <div className="ProductImageDetailsContainer">
-          <div className="ProductImageDetailsRightContainer">
-            <div className="QuantityContainer">
-              <div
-                className="QuantityButton cursor-pointer ButtonStyle"
-                onClick={() => handleQuantityChange(1)}
-              >
-                <Icon icon="material-symbols:add-rounded" className="Icon" />
+            <div className="ProductCategoryContainer">
+              <span>Smartwatches</span>
+              <div className="ProductCategoryTagsContainer">
+                {["Series 7", "GPS", "Water Resistant"].map((category) => (
+                  <span
+                    key={category}
+                    className={`CategoryTag cursor-pointer ${
+                      selectedCategory === category ? "active" : ""
+                    }`}
+                    onClick={() => handleCategorySelect(category)}
+                  >
+                    {category}
+                  </span>
+                ))}
               </div>
-              <span>{quantity}</span>
+            </div>
+            <div className="ProductFeaturesContainer">
+              Product Features: <br />
+              Feature are briefly written below the page.
+            </div>
+            <span>
+              $399.00 <del>$499.00</del> <b>20% off</b> <br />
+            </span>
+            <div className="ProductRatingContainer">
+              <button className="ButtonStyle">Write a review</button>
+              <div className="ProductRating">
+                <Icon icon="material-symbols:star-rounded" className="Icon" />
+                <Icon icon="material-symbols:star-rounded" className="Icon" />
+                <Icon icon="material-symbols:star-rounded" className="Icon" />
+                <Icon icon="material-symbols:star-rounded" className="Icon" />
+                <Icon icon="material-symbols:star-half-rounded" className="Icon" />
+                <span>4.5</span>
+              </div>
+            </div>
+          </div>
+          <div className="SimilarProductsContainer">
+            {similarProducts.map((item, index) => (
+              <div key={index} className="SimilarProduct cursor-pointer">
+                <img src={item.img} alt="Product" />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="ProductImageContainer">
+          <div className="ProductNavigationContainer">
+            <div className="ProductNavigationButton cursor-pointer ButtonStyle">
+              <Icon icon="carbon:chevron-left" className="Icon" />
+            </div>
+            <div className="ProductNavigationButton cursor-pointer ButtonStyle">
+              <Icon icon="carbon:chevron-right" className="Icon" />
+            </div>
+          </div>
+          <img src={ProductImage} alt="Product" />
+          <div className="ProductImageDetailsContainer">
+            <div className="ProductImageDetailsRightContainer">
+              <div className="QuantityContainer">
+                <div
+                  className="QuantityButton cursor-pointer ButtonStyle"
+                  onClick={() => handleQuantityChange(1)}
+                >
+                  <Icon icon="material-symbols:add-rounded" className="Icon" />
+                </div>
+                <span>{quantity}</span>
+                <div
+                  className="QuantityButton cursor-pointer ButtonStyle"
+                  onClick={() => handleQuantityChange(-1)}
+                >
+                  <Icon icon="fluent:subtract-12-filled" className="Icon" />
+                </div>
+              </div>
               <div
-                className="QuantityButton cursor-pointer ButtonStyle"
-                onClick={() => handleQuantityChange(-1)}
+                className="AddToCartButton cursor-pointer ButtonStyle"
+                onClick={() => setCart(!cart)}
               >
-                <Icon icon="fluent:subtract-12-filled" className="Icon" />
+                <Icon icon={iconName} className="Icon" />
+                <span>Add to wishlist</span>
               </div>
             </div>
             <div
-              className="AddToCartButton cursor-pointer ButtonStyle"
-              onClick={() => setCart(!cart)}
+              className="WishlistButton cursor-pointer ButtonStyle"
+              onClick={() => setWishlist(!wishlist)}
             >
-              <Icon icon={iconName} className="Icon" />
-              <span>Add to wishlist</span>
+              {wishlist ? (
+                <Icon icon="material-symbols:favorite-rounded" className="Icon" />
+              ) : (
+                <Icon
+                  icon="material-symbols:favorite-outline-rounded"
+                  className="Icon"
+                />
+              )}
             </div>
           </div>
-          <div
-            className="WishlistButton cursor-pointer ButtonStyle"
-            onClick={() => setWishlist(!wishlist)}
-          >
-            {wishlist ? (
-              <Icon icon="material-symbols:favorite-rounded" className="Icon" />
-            ) : (
-              <Icon
-                icon="material-symbols:favorite-outline-rounded"
-                className="Icon"
-              />
-            )}
-          </div>
+        </div>
+      </div>
+      <div className="ReviewSectionContainer">
+        <div className="ReviewContainer">
+            {
+              reviews.map((item, index) => (
+                <ReviewCard key={index} data={item}/>
+              ))
+            }
+        </div>
+        <div className="RatingSliderContainer">
+            <div className="RatesContainer">
+                <span><StarRating rating={3.5}/></span>
+                <span>3.5</span>
+            </div>
+            <hr/>
+            <div className="PeopleRateContainer">
+                <div className="StarsContainer">
+                  <span>5</span>
+                  <div className="Slider">
+                    <div className="SliderFill" style={{width: `${22}%`}}></div>
+                  </div>
+                  <span>184</span>
+                </div>
+                <div className="StarsContainer">
+                  <span>4</span>
+                  <div className="Slider">
+                    <div className="SliderFill" style={{width: `${52}%`}}></div>
+                  </div>
+                  <span>184</span>
+                </div>
+                <div className="StarsContainer">
+                  <span>3</span>
+                  <div className="Slider">
+                    <div className="SliderFill" style={{width: `${12}%`}}></div>
+                  </div>
+                  <span>184</span>
+                </div>
+                <div className="StarsContainer">
+                  <span>2</span>
+                  <div className="Slider">
+                    <div className="SliderFill" style={{width: `${8}%`}}></div>
+                  </div>
+                  <span>184</span>
+                </div>
+                <div className="StarsContainer">
+                  <span>1</span>
+                  <div className="Slider">
+                    <div className="SliderFill" style={{width: `${69}%`}}></div>
+                  </div>
+                  <span>184</span>
+                </div>
+            </div>
         </div>
       </div>
     </div>

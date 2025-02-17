@@ -367,5 +367,87 @@
             "wishlist": false,
             "cart": false
         }
+    ],
+    "reviews": [
+        {
+            "id": "1",
+            "name": "User 1",
+            "rating": 4.5,
+            "review": "first and only ma'a on Etsy, and I'm bewond delighted! requested a custom mala based on two stones I was called to invite together in this kind of creation. The fun and joy I Invite together in this kind of creation. The fun and genuine joy.",
+            "date": "2021-09-01",
+            "img": "https://static.vecteezy.com/system/resources/previews/000/439/863/original/vector-users-icon.jpg"
+        },
+        {
+            "id": "2",
+            "name": "User 2",
+            "rating": 3.5,
+            "review": "second and only ma'a on Etsy, and I'm bewond delighted! requested a custom mala based on two stones I was called to invite together in this kind of creation. The fun and joy I Invite together in this kind of creation. The fun and genuine joy.",
+            "date": "2021-09-02",
+            "img": "https://static.vecteezy.com/system/resources/previews/000/439/863/original/vector-users-icon.jpg"
+        },
+        {
+            "id": "3",
+            "name": "User 3",
+            "rating": 2.5,
+            "review": "third and only ma'a on Etsy, and I'm bewond delighted! requested a custom mala based on two stones I was called to invite together in this kind of creation. The fun and joy I Invite together in this kind of creation. The fun and genuine joy.",
+            "date": "2021-09-03",
+            "img": "https://static.vecteezy.com/system/resources/previews/000/439/863/original/vector-users-icon.jpg"
+        },
+        {
+            "id": "4",
+            "name": "User 4",
+            "rating": 1.5,
+            "review": "fourth and only ma'a on Etsy, and I'm bewond delighted! requested a custom mala based on two stones I was called to invite together in this kind of creation. The fun and joy I Invite together in this kind of creation. The fun and genuine joy.",
+            "date": "2021-09-04",
+            "img": "https://static.vecteezy.com/system/resources/previews/000/439/863/original/vector-users-icon.jpg"
+        },
+        {
+            "id": "5",
+            "name": "User 5",
+            "rating": 5,
+            "review": "fifth and only ma'a on Etsy, and I'm bewond delighted! requested a custom mala based on two stones I was called to invite together in this kind of creation. The fun and joy I Invite together in this kind of creation. The fun and genuine joy.",
+            "date": "2021-09-05",
+            "img": "https://static.vecteezy.com/system/resources/previews/000/439/863/original/vector-users-icon.jpg"
+        },
+        {
+            "id": "6",
+            "name": "User 6",
+            "rating": 4,
+            "review": "sixth and only ma'a on Etsy, and I'm bewond delighted! requested a custom mala based on two stones I was called to invite together in this kind of creation. The fun and joy I Invite together in this kind of creation. The fun and genuine joy.",
+            "date": "2021-09-06",
+            "img": "https://static.vecteezy.com/system/resources/previews/000/439/863/original/vector-users-icon.jpg"
+        },
+        {
+            "id": "7",
+            "name": "User 7",
+            "rating": 3,
+            "review": "seventh and only ma'a on Etsy, and I'm bewond delighted! requested a custom mala based on two stones I was called to invite together in this kind of creation. The fun and joy I Invite together in this kind of creation. The fun and genuine joy.",
+            "date": "2021-09-07",
+            "img": "https://static.vecteezy.com/system/resources/previews/000/439/863/original/vector-users-icon.jpg"
+        },
+        {
+            "id": "8",
+            "name": "User 8",
+            "rating": 2,
+            "review": "eighth and only ma'a on Etsy, and I'm bewond delighted! requested a custom mala based on two stones I was called to invite together in this kind of creation. The fun and joy I Invite together in this kind of creation. The fun and genuine joy.",
+            "date": "2021-09-08",
+            "img": "https://static.vecteezy.com/system/resources/previews/000/439/863/original/vector-users-icon.jpg"
+        },
+        {
+            "id": "9",
+            "name": "User 9",
+            "rating": 1,
+            "review": "ninth and only ma'a on Etsy, and I'm bewond delighted! requested a custom mala based on two stones I was called to invite together in this kind of creation. The fun and joy I Invite together in this kind of creation. The fun and genuine joy.",
+            "date": "2021-09-09",
+            "img": "https://static.vecteezy.com/system/resources/previews/000/439/863/original/vector-users-icon.jpg"
+        },
+        {
+            "id": "10",
+            "name": "User 10",
+            "rating": 4.5,
+            "review": "tenth and only ma'a on Etsy, and I'm bewond delighted! requested a custom mala based on two stones I was called to invite together in this kind of creation. The fun and joy I Invite together in this kind of creation. The fun and genuine joy.",
+            "date": "2021-09-10",
+            "img": "https://static.vecteezy.com/system/resources/previews/000/439/863/original/vector-users-icon.jpg"
+        }
     ]
 }
