@@ -6,6 +6,9 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Category from './components/category/Category';
 import CategoryMobile from './components/category/CategoryMobile';
 
+import Cart from './components/cart/Cart';
+import CartMobile from './components/cart/CartMobile';
+
 import Product from './components/product/Product';
 import ProductMobile from './components/product/ProductMobile';
 
@@ -37,6 +40,7 @@ function App() {
         <Route path='/product' element={ isMobile ? <ProductMobile /> : <Product />} />
         <Route path='/login' element={isMobile ? <LoginMobile /> : <Login />} />
         <Route path='/category' element={isMobile ? <CategoryMobile /> : <Category />} />
+        <Route path='/cart' element={isMobile ? <CartMobile /> : <Cart />} /> 
       </Routes>
     </Router>
   );

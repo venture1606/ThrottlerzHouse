@@ -157,7 +157,7 @@
             "reviews": "20",
             "count": 40,
             "wishlist": false,
-            "cart": false
+            "cart": true
         },
         {
             "id": "5",
