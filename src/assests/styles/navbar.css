@@ -296,7 +296,8 @@ nav.before .active-element {
 	padding: 0px 10px;
 	top: 0;
 	width: 100%;
-	background-color: var(--secondary-color);
+	background-color: var(--fourth-color);
+    z-index: 1000;
 }
 
 .NavbarMobileContainer{
@@ -308,7 +309,8 @@ nav.before .active-element {
 	bottom: 0;
 	width: 100%;
 	height: 50px;
-	background-color: var(--secondary-color);
+	background-color: var(--fourth-color);
+    z-index: 1000;
 }
 
 .NavbarMobileLogoContainer{
@@ -320,12 +322,12 @@ nav.before .active-element {
 }
 
 .NavbarMobileLogoContainer .Icon{
-	color: var(--fourth-color);
+	color: var(--primary-color);
 	font-size: 1.5rem;
 }
 
 .NavbarMobileSelected{
-	background-color: var(--primary-color); 
+	background-color: var(--secondary-color); 
 	border-radius: 100%;
 	transform: translateY(-2px);
 	box-shadow: var(--button-box-shadow-active);

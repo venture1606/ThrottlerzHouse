@@ -3,8 +3,9 @@ import { Icon } from '@iconify/react';
 import Lottie from 'react-lottie';
 import { useNavigate } from 'react-router-dom';
 
+
 // Importing files
-import ToggleButton from '../common/ToggleButton';
+import SearchBar from '../common/SearchBar';
 
 // Importing the documents
 import Logo from '../../assests/images/Logo.png';
@@ -12,6 +13,7 @@ import Bike from '../../assests/data/Bike.json';
 
 function NavbarMobile({ onNavigate }) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [showPopup, setShowPopup] = useState(false);
   const navigate = useNavigate();
 
   const BikeAnimation = {
@@ -28,12 +30,16 @@ function NavbarMobile({ onNavigate }) {
     console.log(index);
   };
 
+  const handleNavigate = (path, scrollToSection) => {
+    navigate(path, { state: { scrollTo: scrollToSection } });
+  };
+
   const icons = [
-    { icon: "proicons:home", onClick: () => onNavigate('home') },
+    { icon: "proicons:home", onClick: () => handleNavigate('/', 'home') },
     { icon: "mynaui:shopping-bag", onClick: () => navigate('/category') },
-    { icon: "material-symbols:media-link-outline-rounded", onClick: () => onNavigate('blogs') },
-    { icon: "iconamoon:category-light", onClick: () => onNavigate('productHome') },
-    { icon: "mdi:help-outline", onClick: () => onNavigate('help') },
+    { icon: "material-symbols:media-link-outline-rounded", onClick: () => handleNavigate('/', 'productHome') },
+    { icon: "iconamoon:category-light", onClick: () => handleNavigate('/', 'blogs') },
+    { icon: "mdi:help-outline", onClick: () => handleNavigate('/', 'help') },
     { icon: "solar:login-outline", onClick: () => navigate('/login') },
     { icon: "ic:baseline-whatsapp", onClick: () => window.open('https://wa.me/918248897561', '_blank') },
   ];
@@ -45,7 +51,12 @@ function NavbarMobile({ onNavigate }) {
           <img src={Logo} alt="logo" />
           <Lottie options={BikeAnimation} height={50} width={120} />
         </div>
-        {/* <ToggleButton /> */}
+        <div className="SearchContainer">
+          <Icon icon="material-symbols:search-rounded" onClick={() => setShowPopup(true)} className="SearchIcon" />
+          {showPopup && <SearchBar onClose={() => setShowPopup(false)} />}
+          <Icon icon="icon-park-outline:like" className="SearchIcon" onClick={() => navigate("/cart")} />
+          <Icon icon="solar:user-outline" className="Icon" onClick={() => navigate("/login")} />
+        </div>
       </div>
       <div className='NavbarMobileContainer'>
         {icons.map((item, index) => (
@@ -63,6 +74,7 @@ function NavbarMobile({ onNavigate }) {
           </div>
         ))}
       </div>
+      
     </div>
   );
 }

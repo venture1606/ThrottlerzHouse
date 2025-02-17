@@ -1,44 +1,47 @@
-import React, { useRef } from 'react'
-import { useBreakpointValue } from '@chakra-ui/react';
+import React, { useRef, useEffect } from 'react'
+import { useLocation } from 'react-router-dom';
 
-import NavbarMobile from '../common/NavbarMobile'
 import HomeMobile from './HomeMobile';
-import Home from './Home';
 import BlogsMobile from '../blogs/BlogsMobile';
 import ProductMobileHome from '../product/ProductMobileHome'
 import HelpMobile from '../help/HelpMobile';
 
 function HomeContentMobile() {
 
-    const isMobile = useBreakpointValue({ base: true, md: false });
+    const location = useLocation();
 
     const homeRef = useRef(null);
     const productsRef = useRef(null);
     const blogsRef = useRef(null);
     const helpRef = useRef(null);
 
+    useEffect(() => {
+        if (location.state?.scrollTo) {
+          const sections = {
+            home: homeRef,
+            productHome: productsRef,
+            blogs: blogsRef,
+            help: helpRef,
+          };
+    
+          sections[location.state.scrollTo]?.current?.scrollIntoView({ behavior: "smooth" });
+        }
+      }, [location]);
+
   return (
     <div className='App HomeContentMobileContainer'>
-        <div ref={homeRef}>
-            { isMobile ? <HomeMobile /> : <Home />}
+        <div id='home' ref={homeRef}>
+            <HomeMobile />
         </div>
-        <div ref={productsRef}>
+        <div id='productHome' ref={productsRef}>
             <ProductMobileHome />
         </div>
-        <div ref={blogsRef}>
+        <div id='blogs' ref={blogsRef}>
             <BlogsMobile />
         </div>
-        <div ref={helpRef}>
+        <div id='help' ref={helpRef}>
             <HelpMobile />
         </div>
-        <NavbarMobile 
-            onNavigate={(section) => {
-                if (section === "home" && homeRef.current) homeRef.current.scrollIntoView({ behavior: "smooth" });
-                if (section === "products" && productsRef.current) productsRef.current.scrollIntoView({ behavior: "smooth" });
-                if (section === "blogs" && blogsRef.current) blogsRef.current.scrollIntoView({ behavior: "smooth" });
-                if (section === "help" && helpRef.current) helpRef.current.scrollIntoView({ behavior: "smooth" });
-            }}
-        />
     </div>
   )
 }

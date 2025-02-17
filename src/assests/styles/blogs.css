@@ -87,32 +87,47 @@
 }
 
 .BlogNavigationButton:disabled {
-    opacity: 0.2; /* Reduced opacity when disabled */
-    cursor: not-allowed; /* Optional: Change cursor to indicate non-clickable */
+    opacity: 0.2; 
+    cursor: not-allowed;
 }
 
 /* Mobile Design styles */
 .BlogsMobileContainer{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    gap: 1rem;
-    margin: 0rem;
-    padding: 30px 0px;
-    border-radius: var(--border-radius);
-    /* background: linear-gradient(135deg, #cbf4df, #f0fcf5); */
-    /* box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px; */
+    gap: 2rem;
+    padding: 2rem;
 }
 
-.BlogsMobileDetailsContainer{
+.BlogsMobileVideosContainer{
+    align-items: center;
     display: flex;
-    justify-content: space-around;
-    gap: 0.5rem;
+    gap: 2rem;
+    overflow: auto;
+    padding: 0 1rem;
+    scroll-behavior: smooth;
+    white-space: nowrap;
 }
 
-@media (max-width: 768px) {
+.BlogsMobileVideosContainer video{
+    height: 570px !important;
+}
+
+/* for mobile */
+@media only screen and (max-width: 768px) {
+    .BlogsNavigationContainer{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }   
+
     .BlogNavigationButton{
-        width: 30px;
-        height: 30px;
+        width: 20px;
+        height: 20px;
+    }
+    .BlogNavigationButton .Icon{
+        font-size: 1rem;
     }
 }

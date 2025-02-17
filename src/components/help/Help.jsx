@@ -8,9 +8,13 @@ import '../../assests/styles/help.css';
 // Importing the images
 import Logo from '../../assests/images/Logo.png';
 
-function Help({ onNavigate }) {
+function Help() {
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
+
+  const handleNavigate = (path, scrollToSection) => {
+    navigate(path, { state: { scrollTo: scrollToSection } });
+  }
 
   return (
     <div className='AddressContainer'>
@@ -23,11 +27,11 @@ function Help({ onNavigate }) {
         </div>
         <div className='QuickLinksContainer'>
             <h3>QUICK LINKS</h3>
-            <span onClick={() => onNavigate('home')}>HOME</span>
+            <span onClick={() => handleNavigate('home')}>HOME</span>
             <span onClick={() => navigate('/product')}>PRODUCTS</span>
-            <span onClick={() => onNavigate('blogs')}>BLOGS</span>
-            <span onClick={() => onNavigate('productHome')}>CATEGORY</span>
-            <span onClick={() => onNavigate('help')}>ABOUT US</span>
+            <span onClick={() => handleNavigate('blogs')}>BLOGS</span>
+            <span onClick={() => handleNavigate('productHome')}>CATEGORY</span>
+            <span onClick={() => handleNavigate('help')}>ABOUT US</span>
             <span onClick={() => navigate('/cart')}>CART</span>
         </div>
         <div className='ServicesContainer'>

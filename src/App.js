@@ -23,6 +23,7 @@ import Navbar from './components/common/Navbar';
 import './App.css';
 import { useSelector } from 'react-redux';
 import { useBreakpointValue } from '@chakra-ui/react';
+import NavbarMobile from './components/common/NavbarMobile';
 
 function App() {
 
@@ -38,7 +39,7 @@ function App() {
   return (
     <Router className="CommonStyle">
 
-      <Navbar />
+      {isMobile ? <NavbarMobile /> : <Navbar />}
 
       <Routes>
         <Route path='/' element={isMobile ? <HomeContentMobile /> : <HomeContent />}/>

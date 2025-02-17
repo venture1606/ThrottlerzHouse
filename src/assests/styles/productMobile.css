@@ -12,9 +12,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 100vh;
-    /* padding: 3rem 0; */
-    background: linear-gradient(to bottom, #4e515c 1%, #4e515cda 15%, #4e515c53, var(--background-color));
+    padding: 3rem 0;
 }
 
 .ProductMobileListContainer{
@@ -50,7 +48,7 @@
 }
 
 .SliderMobileButton {
-    background: var(--primary-color);
+    background: var(--fourth-color);
     color: var(--text-color);
     border: none;
     border-radius: 50%;
@@ -70,4 +68,8 @@
 
 .SliderMobileButton.right {
     margin-right: 10px;
+}
+
+.SliderMobileButton .Icon{
+    font-size: 1rem;
 }

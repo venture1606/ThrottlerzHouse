@@ -2,12 +2,10 @@ import React, { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { Icon } from "@iconify/react/dist/iconify.js";
 
-import Navbar from "../common/Navbar";
 import Home from "./Home";
 import ProductHome from "../product/ProductHome";
 import Blogs from "../blogs/Blogs";
 import Help from "../help/Help";
-import ToggleButton from "../common/ToggleButton";
 
 import "../../assests/styles/home.css";
 
@@ -36,7 +34,6 @@ const HomeContent = () => {
 
   return (
     <div className="App">
-      {/* Navbar */}
 
       {/* Home Section */}
       <div id="home" ref={homeRef}>

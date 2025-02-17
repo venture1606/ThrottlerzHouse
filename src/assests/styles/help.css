@@ -200,3 +200,32 @@
 .TermsAndConditions h3, .TermsAndConditions h2, .TermsAndConditions strong{
     color: var(--text-color);
 }
+
+/* mobile styles */
+
+@media (max-width: 768px) {
+    .HelpMobileContainer{
+        display: flex;
+        flex-direction: column;
+        padding: 2rem 1rem;
+        gap: 2rem;
+    }
+
+    .TextFooter{
+        font-size: clamp(12px, 1.4vw, 18px);
+        text-align: center;
+    }
+
+    .TextFooter text{
+        font-size: clamp(16px, 1.6vw, 24px);
+    }
+
+    .QuickLinksContainer, .ServicesContainer, .ContactContainer{
+        align-items: center;
+    }
+
+    .HelpLogoContainer{
+        text-align: center;
+        font-size: clamp( 20px, 1.8vw, 28px);
+    }
+}

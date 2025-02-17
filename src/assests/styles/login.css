@@ -57,13 +57,13 @@
     gap: 1rem;
 }
 
-.LoginLeft button{
+.LoginLeft .LoginButton{
     display: flex;
     align-items: center;
     font-size: 14px;
 }
 
-button .Icon{
+.LoginButton .Icon{
     font-size: 28px;
 }
 

@@ -97,7 +97,7 @@ function Login() {
             {
                 show ? <LoginForm /> : 
                 <div className='LoginLeft'>
-                    <button onClick={() => navigate('/')}>
+                    <button className='LoginButton' onClick={() => navigate('/')}>
                         <Icon icon='material-symbols-light:arrow-back-2-rounded' className='Icon' /> 
                         Back to website
                     </button>

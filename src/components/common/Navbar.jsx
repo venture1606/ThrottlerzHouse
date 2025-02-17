@@ -14,7 +14,7 @@ import Bike from "../../assests/data/Bike.json";
 import "../../assests/styles/navbar.css";
 import SearchBar from "./SearchBar"
 
-const Navbar = ({ onNavigate }) => {
+const Navbar = () => {
 
   const navigate = useNavigate();
   const navRef = useRef(null);
@@ -28,10 +28,6 @@ const Navbar = ({ onNavigate }) => {
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
-  };
-
-  const handleProduct = () => {
-    navigate("/product");
   };
 
   const Home = () => {
@@ -183,7 +179,7 @@ const Navbar = ({ onNavigate }) => {
     };
   }, []);
 
-const handleNavigate = (path, scrollToSection) => {
+  const handleNavigate = (path, scrollToSection) => {
     navigate(path, { state: { scrollTo: scrollToSection } });
   };
 
