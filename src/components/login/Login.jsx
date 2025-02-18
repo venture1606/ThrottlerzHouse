@@ -33,6 +33,7 @@ function Login() {
     useEffect(() => {
         startSliding(); // Start sliding on mount
         return () => clearInterval(intervalRef.current); // Cleanup on unmount
+        window.scrollTo(0, 0);
     }, []);
 
     const handleMouseEnter = () => {
@@ -65,8 +66,8 @@ function Login() {
                         />
                     </div>
                     <button type='submit' className='ButtonStyle CreateAccount'>Sign in</button>
-                    <span>Forgot password?</span>
-                    <span>Don't have an account? <a onClick={() => setShow(false)}>Create account</a></span>
+                    <span className='cursor-pointer Account'>Forgot password?</span>
+                    <span className='cursor-pointer Account' onClick={() => setShow(false)}>Don't have an account? <a>Create account</a></span>
                 </form>
             </div>
         )
@@ -97,12 +98,12 @@ function Login() {
             {
                 show ? <LoginForm /> : 
                 <div className='LoginLeft'>
-                    <button className='LoginButton' onClick={() => navigate('/')}>
+                    <button className='LoginButton cursor-pointer' onClick={() => navigate('/')}>
                         <Icon icon='material-symbols-light:arrow-back-2-rounded' className='Icon' /> 
                         Back to website
                     </button>
                     <h2 className='m-0'>Create an account</h2>
-                    <span>Already have an account? <a onClick={() => setShow(true)}>Login</a></span>
+                    <span className='cursor-pointer Account' onClick={() => setShow(true)}>Already have an account? <a >Login</a></span>
                     <form className='LoginForm' onSubmit={(e) => { e.preventDefault(); console.log("Form submitted"); }}>
                         <div className='DetailsContainer'>
                             <input type='text' placeholder='Name' required />
