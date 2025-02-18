@@ -53,3 +53,27 @@
     border: 1px solid var(--secondary-color);
     color: var(--primary-color);
 }
+
+/* Mobile styles */
+.CartMobileContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 4rem 1rem;
+}
+
+@media screen and (max-width: 991px){
+    .CartCardsContainer{
+        width: 100%;
+    }
+
+    .BillingContainer{
+        width: 100%;
+        border-left: none;
+        margin: 2rem 0;
+    }
+
+    .BillingButtonContainer{
+        justify-content: center;
+    }
+}
