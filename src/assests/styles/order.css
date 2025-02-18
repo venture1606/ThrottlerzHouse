@@ -1,0 +1,72 @@
+.OrderContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem 2rem;
+}
+
+.OrderRightContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    width: 50%;
+}
+
+.OrderProduct{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.OrderProduct h1{
+    position: absolute;
+    top: -1px;
+    left: 20px;
+    margin: 0 !important;
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    color: var(--secondary-color);
+}
+
+.OrderProduct hr{
+    margin: 0 !important;
+}
+
+.OrderProductDetailsContainer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.7rem;
+}
+
+.OrderProductDetails{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.OrderProductDetails h3{
+    font-size: clamp(0.7rem, 1.5vw, 1rem);
+    color: var(--primary-color);
+}
+
+.OrderProductDetails span{
+    font-size: clamp(0.4rem, 1.5vw, 0.8rem);
+}
+
+.Bill{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.OrderLeftContainer{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    gap: 1rem;
+    width: 50%;
+    border-left: 1px solid var(--text-color);
+}

@@ -1,4 +1,11 @@
 {
+    "user": {
+        "name": "User 1",
+        "email": "9aI8o@example.com",
+        "phone": "1234567890",
+        "address": "Address 1, City 1, State 1, Country 1"
+    },
+
     "product": [
         {
             "id": "1",
@@ -448,6 +455,60 @@
             "review": "tenth and only ma'a on Etsy, and I'm bewond delighted! requested a custom mala based on two stones I was called to invite together in this kind of creation. The fun and joy I Invite together in this kind of creation. The fun and genuine joy.",
             "date": "2021-09-10",
             "img": "https://static.vecteezy.com/system/resources/previews/000/439/863/original/vector-users-icon.jpg"
+        }
+    ],
+    "order": [
+        {
+            "id": "18",
+            "img": "https://www.garage91.in/wp-content/uploads/2025/02/3_4_1946x.jpg",
+            "title": "Card 18",
+            "description": "Description for Card 18",
+            "price": "1800",
+            "originalPrice": "1900",
+            "rating": "3",
+            "reviews": "90",
+            "count": 180,
+            "wishlist": false,
+            "cart": false
+        },
+        {
+            "id": "19",
+            "img": "https://th.bing.com/th/id/OIP.3V2fvdA6O0fSG6qGMyMeZwHaEo?rs=1&pid=ImgDetMain",
+            "title": "Card 19",
+            "description": "Description for Card 19",
+            "price": "1900",
+            "originalPrice": "2000",
+            "rating": "4",
+            "reviews": "90",
+            "count": 190,
+            "wishlist": false,
+            "cart": false
+        },
+        {
+            "id": "20",
+            "img": "https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?cs=srgb&dl=appetizer-bowl-delicious-1640772.jpg&fm=jpg",
+            "title": "Card 20",
+            "description": "Description for Card 20",
+            "price": "2000",
+            "originalPrice": "2100",
+            "rating": "5",
+            "reviews": "200",
+            "count": 200,
+            "wishlist": false,
+            "cart": false
+        },
+        {
+            "id": "21",
+            "img": "https://www.garage91.in/wp-content/uploads/2025/02/3_4_1946x.jpg",
+            "title": "Card 21",
+            "description": "Description for Card 21",
+            "price": "2100",
+            "originalPrice": "2200",
+            "rating": "5",
+            "reviews": "210",
+            "count": 210,
+            "wishlist": false,
+            "cart": false
         }
     ]
 }
