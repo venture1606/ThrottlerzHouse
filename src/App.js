@@ -18,6 +18,9 @@ import HomeContentMobile from './components/home/HomeContentMobile';
 import Login from './components/login/Login';
 import LoginMobile from './components/login/LoginMobile';
 
+import Order from './components/order/Order';
+import OrderMobile from './components/order/OrderMobile';
+
 import Navbar from './components/common/Navbar';
 
 import './App.css';
@@ -47,6 +50,7 @@ function App() {
         <Route path='/login' element={isMobile ? <LoginMobile /> : <Login />} />
         <Route path='/category' element={isMobile ? <CategoryMobile /> : <Category />} />
         <Route path='/cart' element={isMobile ? <CartMobile /> : <Cart />} /> 
+        <Route path='/order' element={isMobile ? <OrderMobile /> : <Order />} />
       </Routes>
     </Router>
   );

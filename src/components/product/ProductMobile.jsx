@@ -136,6 +136,10 @@ function ProductMobile() {
                   <span>4.5</span>
                 </div>
               </div>
+              <button className="BuyNowButton cursor-pointer ButtonStyle" onClick={() => navigate('/order')}>
+                <Icon icon="akar-icons:cart" className="Icon" />
+                <span>Buy Now</span>
+              </button>
           </div>
       </div>
       <div className='ReviewSectionContainer'>

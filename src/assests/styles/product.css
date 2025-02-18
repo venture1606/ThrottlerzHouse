@@ -166,18 +166,29 @@
 }
 
 .ProductRatingContainer button{
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
     font-size: 1.1rem;
     align-items: center;
     border-radius: var(--border-radius);
     padding: 8px;
     width: 40%;
+    border: 1px solid var(--secondary-color) !important;
+    background-color: transparent;
+    color: var(--primary-color);
 }
 
 .ProductRatingContainer span{
     font-size: 1rem;
     color: var(--secondary-color);
+}
+
+.BuyNowButton{
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+    border-radius: var(--border-radius);
+    padding: 10px 12px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .SimilarProductsContainer{

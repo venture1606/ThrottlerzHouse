@@ -41,7 +41,7 @@
 .BillingButtonContainer button{
     border-radius: var(--border-radius);
     padding: 0.8rem 1rem;
-    font-size: 0.9rem;
+    font-size: clamp(0.9rem, 1vw, 1.2rem);
 }
 
 .BillingButtonContainer button:nth-child(1){
