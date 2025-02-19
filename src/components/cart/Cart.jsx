@@ -55,7 +55,7 @@ function Cart() {
                 <hr className='m-0'/>
             </div>
             <div className='BillingButtonContainer'>
-                <button className='ButtonStyle' onClick={() => navigate('/checkout')}>Proceed to checkout</button>
+                <button className='ButtonStyle' onClick={() => navigate('/order')}>Proceed to checkout</button>
                 <button className='ButtonStyle' onClick={() => navigate('/category')}>Continue shopping</button>
             </div>
         </div>

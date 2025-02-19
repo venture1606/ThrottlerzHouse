@@ -3,8 +3,6 @@ import React from 'react'
 // importing components
 import StarRating from './StarRating'
 
-
-
 // importing styles
 import '../../assests/styles/review.css'
 

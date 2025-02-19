@@ -224,7 +224,7 @@ nav.before .active-element {
 }
   
 .popup-container {
-    background-color: var(--background-color);
+    background-color: var(--secondary-color);
     padding: 4px 16px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -241,7 +241,7 @@ nav.before .active-element {
 
 .popup-icon{
     font-size: 22px;
-    color: var(--secondary-color);
+    color: var(--fourth-color);
 }
   
 .popup-input {
@@ -250,6 +250,10 @@ nav.before .active-element {
     border-radius: 4px;
     background-color: transparent;
     font-size: 16px;
+}
+
+.popup-input::placeholder {
+    color: var(--fourth-color);
 }
 
 .popup-results {

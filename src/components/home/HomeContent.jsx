@@ -28,7 +28,7 @@ const HomeContent = () => {
         help: helpRef,
       };
 
-      sections[location.state.scrollTo]?.current?.scrollIntoView({ behavior: "smooth" });
+      sections[location.state.scrollTo]?.current?.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   }, [location]);
 
