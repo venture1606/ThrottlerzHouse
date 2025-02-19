@@ -106,12 +106,6 @@ const Category = () => {
                 ))
             }
         </div>
-
-        {/* Navigation Buttons */}
-        <div className="CategoryButtons">
-          <button className="btn btn-secondary" onClick={() => navigate("/")}>Back to Home</button>
-          <button className="btn btn-primary" onClick={() => navigate("/product")}>View Single Product</button>
-        </div>
       </div>
     </div>
   );

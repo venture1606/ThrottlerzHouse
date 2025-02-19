@@ -88,8 +88,6 @@ function CategoryMobile() {
                 ))
             }
         </div>
-
-        <button className='btn btn-primary' onClick={() => navigate('/product')}>Single Product</button>
     </div>
   )
 }

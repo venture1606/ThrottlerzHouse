@@ -11,7 +11,8 @@ function Card({ card }) {
   const [isHovered, setIsHovered] = useState(false);
   const [wished, setWished] = useState(card.wishlist);
 
-  const handleAddingCart = () => {
+  const handleAddingCart = (event) => {
+    event.stopPropagation();
     if(card.cart){
         alert("Removed to cart!");
     } else {
@@ -19,11 +20,17 @@ function Card({ card }) {
     }
   }
 
+  const handleWishlist = (event) => {
+    event.stopPropagation();
+    setWished(!wished);
+  }
+
   const gradientId = `starGradient-${Math.random()}`
 
   return (
     <div
         className="Card"
+        onClick={() => navigate('/product')}
         style={{
             backgroundImage: `url(${card.img})`,
             backgroundSize: "cover",
@@ -43,8 +50,8 @@ function Card({ card }) {
         <button className="AddToCart" onClick={handleAddingCart}>
             <Icon icon="proicons:cart" className="Icon" />
         </button>
-        <div className="WishIcon">
-            <Icon icon={ wished ? "icon-park-solid:like" : "icon-park-outline:like"} className="Icon" onClick={() => setWished(!wished)}/>
+        <div className="WishIcon" onClick={handleWishlist}>
+            <Icon icon={ wished ? "icon-park-solid:like" : "icon-park-outline:like"} className="Icon" />
         </div>
         <div className="CardDetailsContainer">
             <h3>{card.title}</h3>

@@ -1,7 +1,12 @@
+.OrderShippingContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
 .OrderContainer{
     display: flex;
     justify-content: space-between;
-    align-items: center;
     gap: 2rem;
     padding: 1rem 2rem;
 }
@@ -56,17 +61,175 @@
     font-size: clamp(0.4rem, 1.5vw, 0.8rem);
 }
 
-.Bill{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
 .OrderLeftContainer{
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
     gap: 1rem;
     width: 50%;
+    padding: 0 1rem;
     border-left: 1px solid var(--text-color);
+}
+
+.Bill{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.PaymentContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.PaymentDetailsContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.PaymentOptionsContainer{
+    display: flex;
+    gap: 1rem;
+    padding: 0 1rem;
+}
+
+.PaymentOption{
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    border-radius: var(--border-radius);
+    color: var(--text-color);
+    cursor: pointer;
+    border: 1px solid var(--secondary-color) !important;
+    min-width: 15%;
+}
+
+.PaymentButtonContainer{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.PaymentButtonContainer button:nth-child(1){
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--secondary-color);
+    color: var(--text-color);
+    width: 100%;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+
+.PaymentButtonContainer button:nth-child(2){
+    padding: 0.5rem 1rem;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: none;
+    width: 100%;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+
+.PaymentButtonContainer button:nth-child(2):disabled{
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.DeliveryDetailsContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.DeliveryDetailsContainer input{
+    padding: 0.5rem 1rem;
+    background-color: var(--secondary-color);
+    color: var(--fourth-color);
+    border-radius: var(--border-radius);
+    width: 60%;
+}
+
+.DeliveryDetailsContainer input:focus{
+    outline: none;
+}
+
+.DeliveryDetailsContainer input::placeholder{
+    color: var(--fourth-color);
+}
+
+.DeliveryDetailsContainer span{
+    text-align: end;
+    width: 60%;
+}
+
+.ShippingContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 2rem;
+}
+
+.ShippingOptionsContainer{
+    display: flex;
+    gap: 1rem;
+}
+
+.ShippingOptionsContainer button{
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--secondary-color);
+    color: var(--text-color);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+
+.ShipOptionActive{
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+@media screen and (max-width: 991px) {
+
+    .OrderShippingContainer{
+        padding: 4rem 1rem;
+    }
+
+    .OrderRightContainer{
+        width: 100% !important;
+    }
+
+    .OrderLeftContainer{
+        border: none;
+        width: 100% !important;
+    }
+
+    .OrderProductDetailsContainer{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 0.7rem;
+    }
+
+    .OrderProductDetails h3{
+        font-size: clamp(1rem, 2vw, 1.5rem);
+        color: var(--primary-color);
+    }
+    
+    .OrderProductDetails span{
+        font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+    }
+
+    .PaymentOptionsContainer{
+        flex-direction: column;
+    }
+
+    .ShippingOptionsContainer{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    .ShippingOptionsContainer button{
+        font-size: clamp(0.7rem, 1.5vw, 1rem);
+    }
 }

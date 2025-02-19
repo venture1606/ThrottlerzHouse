@@ -468,8 +468,10 @@
             "rating": "3",
             "reviews": "90",
             "count": 180,
-            "wishlist": false,
-            "cart": false
+            "courierOffice": "Courier Office 1",
+            "trackingId": "1234567890",
+            "estimatedDelivery": "2021-09-20",
+            "status": "Delivered" 
         },
         {
             "id": "19",
@@ -481,8 +483,10 @@
             "rating": "4",
             "reviews": "90",
             "count": 190,
-            "wishlist": false,
-            "cart": false
+            "courierOffice": "Courier Office 2",
+            "trackingId": "1234567890",
+            "estimatedDelivery": "2021-09-21",
+            "status": "Shipping"
         },
         {
             "id": "20",
@@ -494,8 +498,10 @@
             "rating": "5",
             "reviews": "200",
             "count": 200,
-            "wishlist": false,
-            "cart": false
+            "courierOffice": "Courier Office 3",
+            "trackingId": "1234567890",
+            "estimatedDelivery": "2021-09-22",
+            "status": "Processing"
         },
         {
             "id": "21",
@@ -507,8 +513,10 @@
             "rating": "5",
             "reviews": "210",
             "count": 210,
-            "wishlist": false,
-            "cart": false
+            "courierOffice": "Courier Office 4",
+            "trackingId": "1234567890",
+            "estimatedDelivery": "2021-09-23",
+            "status": "Delivered"
         }
     ]
 }
