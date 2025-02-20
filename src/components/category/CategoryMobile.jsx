@@ -18,7 +18,7 @@ function CategoryMobile() {
 
   return (
     <div className='CategoryMobileContainer'>
-        <h1>All Categories</h1>
+        <h1>ALL CATEGORIES</h1>
         
         <nav className="navbar CategoryNavbarContainer">
           <div className="navbar-collapse" id="navbarNavDropdown">

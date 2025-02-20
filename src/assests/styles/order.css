@@ -149,7 +149,6 @@
     background-color: var(--secondary-color);
     color: var(--fourth-color);
     border-radius: var(--border-radius);
-    width: 60%;
 }
 
 .DeliveryDetailsContainer input:focus{
@@ -162,7 +161,6 @@
 
 .DeliveryDetailsContainer span{
     text-align: end;
-    width: 60%;
 }
 
 .ShippingContainer{

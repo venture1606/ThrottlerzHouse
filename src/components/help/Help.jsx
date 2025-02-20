@@ -27,19 +27,49 @@ function Help() {
         </div>
         <div className='QuickLinksContainer'>
             <h3>QUICK LINKS</h3>
-            <span onClick={() => handleNavigate( '/', 'home')}>HOME</span>
-            <span onClick={() => navigate('/category')}>PRODUCTS</span>
-            <span onClick={() => handleNavigate('/', 'blogs')}>BLOGS</span>
-            <span onClick={() => handleNavigate('/', 'productHome')}>CATEGORY</span>
-            <span onClick={() => handleNavigate('/', 'help')}>ABOUT US</span>
-            <span onClick={() => navigate('/cart')}>CART</span>
+            <div className='ContactDetailsContainer' onClick={() => handleNavigate( '/', 'home')}>
+                <Icon icon="material-symbols-light:home-rounded" className='Icon'/>
+                <span>HOME</span>
+            </div>
+            <div className='ContactDetailsContainer' onClick={() => navigate('/category')}>
+                <Icon icon="ix:product" className='Icon'/>
+                <span>PRODUCTS</span>
+            </div>
+            <div className='ContactDetailsContainer' onClick={() => handleNavigate('/', 'blogs')}>
+                <Icon icon="lets-icons:video-fill" className='Icon'/>
+                <span>BLOGS</span>
+            </div>
+            <div className='ContactDetailsContainer' onClick={() => handleNavigate('/', 'productHome')}>
+                <Icon icon="iconamoon:category-fill" className='Icon'/>
+                <span>CATEGORY</span>
+            </div>
+            <div className='ContactDetailsContainer' onClick={() => handleNavigate('/', 'help')}>
+                <Icon icon="material-symbols-light:contact-support-rounded" className='Icon'/>
+                <span>ABOUT US</span>
+            </div>
+            <div className='ContactDetailsContainer' onClick={() => navigate('/cart')}>
+                <Icon icon="mynaui:cart-solid" className='Icon'/>
+                <span>CART</span>
+            </div>
         </div>
         <div className='ServicesContainer'>
           <h3>SERVICES</h3>
-          <span>BUYING AND SELLING BIKES</span>
-          <span>RENTING BIKES</span>
-          <span>REPAIRING BIKES</span>
-          <span>DELIVERY</span>
+          <div className='ContactDetailsContainer'>
+            <Icon icon="mynaui:paint-solid" className='Icon'/>
+            <span>PAINTING</span>
+          </div>
+          <div className='ContactDetailsContainer'>
+            <Icon icon="map:car-wash" className='Icon'/>
+            <span>FOAM WASH</span>
+          </div>
+          <div className='ContactDetailsContainer'>
+            <Icon icon="hugeicons:repair" className='Icon'/>
+            <span>REPAIRING</span>
+          </div>
+          <div className='ContactDetailsContainer'>
+            <Icon icon="material-symbols-light:book" className='Icon'/>
+            <span>BOOKING FOR TECHNICIAN</span>
+          </div>
         </div>
         <div className='ContactContainer'>
           <h3>CONTACT</h3>

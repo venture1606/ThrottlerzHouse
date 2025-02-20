@@ -29,20 +29,10 @@
     max-width: 250px;
 }
 
-.QuickLinksContainer{
+.QuickLinksContainer, .ServicesContainer, .ContactContainer{
     display: flex;
     flex-direction: column;
-}
-
-.ServicesContainer{
-    display: flex;
-    flex-direction: column;
-}
-
-.ContactContainer{
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
+    gap: 0.5rem;
 }
 
 .ContactDetailsContainer{
@@ -59,9 +49,13 @@
     font-size: 24px;
 }
 
-.QuickLinksContainer span, .ServicesContainer span{
+.QuickLinksContainer .ContactDetailsContainer, .ServicesContainer .ContactDetailsContainer{
     cursor: pointer;
     width: fit-content;
+}
+
+.QuickLinksContainer .ContactDetailsContainer:hover, .ServicesContainer .ContactDetailsContainer:hover{
+    color: var(--secondary-color);
 }
 
 .FooterContact{

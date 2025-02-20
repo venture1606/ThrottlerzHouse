@@ -25,7 +25,7 @@ const Category = () => {
     <div className="CategoryPage">
       {/* Main Content */}
       <div className="CategoryContainer">
-        <h1>All Categories</h1>
+        <h1>ALL CATEGORIES</h1>
 
         <nav className="navbar navbar-expand-lg CategoryNavbarContainer">
             <div className="collapse navbar-collapse" id="navbarNavDropdown">

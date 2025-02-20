@@ -13,7 +13,7 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <ChakraProvider>
-        <App />
+        <App className='CommonStyle'/>
       </ChakraProvider>
     </Provider>
   </React.StrictMode>

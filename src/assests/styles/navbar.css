@@ -160,6 +160,8 @@ nav.before .active-element {
 .HeaderContainer {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
+    font-family: "Syne", serif, sans-serif;
+    font-weight: 600;
 }
 
 .HeaderContainer {
