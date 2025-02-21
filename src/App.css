@@ -6,7 +6,7 @@
 
 /* setting the default mode to dark */
 [data-theme="dark"] {
-  --primary-color: #ECDFCC; /* choosen - #21251f */
+  --primary-color: #c1d100; /* choosen - #21251f */
   --secondary-color: #697565; /* choosen - #c8f560 */
   --third-color: #3C3D37; /* choosen - #4e515c */
   --fourth-color: #181C14; /* choosen - #7862f8 */

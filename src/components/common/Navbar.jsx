@@ -8,7 +8,7 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 // Importing assets
-import Logo from "../../assests/images/Logo.png";
+import Logo from "../../assests/images/navbarlogo.png";
 import Bike from "../../assests/data/Bike.json";
 import "../../assests/styles/navbar.css";
 import SearchBar from "./SearchBar"

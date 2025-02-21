@@ -22,6 +22,7 @@ import Order from './components/order/Order';
 import OrderMobile from './components/order/OrderMobile';
 
 import Navbar from './components/common/Navbar';
+import Indication from './components/common/Indication';
 
 import './App.css';
 import { useSelector } from 'react-redux';
@@ -31,6 +32,9 @@ import NavbarMobile from './components/common/NavbarMobile';
 function App() {
 
   const mode = useSelector((state) => state.message.mode);
+  const message = useSelector((state) => state.message);
+  const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
+
   const isMobile = useBreakpointValue({ base: true, lg: false });
 
   if (mode) {
@@ -42,6 +46,7 @@ function App() {
   return (
     <Router>
       {isMobile ? <NavbarMobile /> : <Navbar />}
+
       <Routes>
         <Route path='/' element={isMobile ? <HomeContentMobile /> : <HomeContent />}/>
         <Route path='/product' element={ isMobile ? <ProductMobile /> : <Product />} />
@@ -50,6 +55,8 @@ function App() {
         <Route path='/cart' element={isMobile ? <CartMobile /> : <Cart />} /> 
         <Route path='/order' element={isMobile ? <OrderMobile /> : <Order />} />
       </Routes>
+
+      <Indication message={message} />
     </Router>
   );
 }

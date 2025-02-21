@@ -1,16 +1,24 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../../assests/styles/login.css';
 import { Icon } from '@iconify/react/dist/iconify.js';
+
+import User from '../api/User';
+import Loading from '../common/Loading';
+import '../../assests/styles/login.css';
 
 function Login() {
     const navigate = useNavigate();
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const { handleLogin, loading } = User();
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const [show, setShow] = useState(false);
 
+    const currentIndexRef = useRef(0);
     const intervalRef = useRef(null);
     const timeoutRef = useRef(null);
+    const [, forceUpdate] = useState(0); // To trigger updates only when necessary
 
     const images = [
         'https://th.bing.com/th/id/OIP.Se7xzMDsSjCkzA5wJoGgagHaHa?rs=1&pid=ImgDetMain',
@@ -21,7 +29,8 @@ function Login() {
     // Function to start the interval
     const startSliding = () => {
         intervalRef.current = setInterval(() => {
-            setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+            currentIndexRef.current = (currentIndexRef.current + 1) % images.length;
+            forceUpdate((n) => n + 1); // This forces a minimal re-render only when necessary
         }, 5000);
     };
 
@@ -32,8 +41,8 @@ function Login() {
 
     useEffect(() => {
         startSliding(); // Start sliding on mount
-        return () => clearInterval(intervalRef.current); // Cleanup on unmount
         window.scrollTo(0, 0);
+        return () => clearInterval(intervalRef.current); // Cleanup on unmount
     }, []);
 
     const handleMouseEnter = () => {
@@ -43,44 +52,31 @@ function Login() {
 
     const handleMouseLeave = () => {
         timeoutRef.current = setTimeout(() => {
-            startSliding(); // Restart after 3 seconds
+            startSliding(); // Restart after 1 second
         }, 1000);
     };
 
-    const TogglePassword = () => {
-        setShowPassword(!showPassword);
-    };
+    const handleEmailChange = (e) => setEmail(e.target.value);
+    const handlePasswordChange = (e) => setPassword(e.target.value);
+    const TogglePassword = () => setShowPassword(!showPassword);
 
-    const LoginForm = () => {
-        return (
-            <div className="SignInContainer LoginLeft">
-                <form className='SignInForm LoginForm' onSubmit={(e) => { e.preventDefault(); console.log("Form submitted"); }}>
-                    <h2 className='m-0'>Sign in</h2>
-                    <input type='email' placeholder='Email' required />
-                    <div className='PasswordContainer'>
-                        <input type={showPassword ? 'text' : 'password'} placeholder='Password' required />
-                        <Icon 
-                            icon={showPassword ? 'material-symbols:visibility-off' : 'material-symbols:visibility'} 
-                            className='EyeIcon'
-                            onClick={TogglePassword}
-                        />
-                    </div>
-                    <button type='submit' className='ButtonStyle CreateAccount'>Sign in</button>
-                    <span className='cursor-pointer Account'>Forgot password?</span>
-                    <span className='cursor-pointer Account' onClick={() => setShow(false)}>Don't have an account? <a>Create account</a></span>
-                </form>
-            </div>
-        )
-    }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        handleLogin({ email, password });
+        
+        setEmail('');
+        setPassword('');
+    };
 
     return (
         <div className='LoginContainer'>
+            {loading && <Loading />}
             <div 
                 className='LoginRight' 
                 onMouseEnter={handleMouseEnter} 
                 onMouseLeave={handleMouseLeave}
             >
-                <div className="ImageContainer" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+                <div className="ImageContainer" style={{ transform: `translateX(-${currentIndexRef.current * 100}%)` }}>
                     {images.map((img, index) => (
                         <img key={index} src={img} alt={`Slide ${index + 1}`} className="SlidingImage" />
                     ))}
@@ -90,20 +86,38 @@ function Login() {
                         <Icon 
                             key={index} 
                             icon='octicon:dash-16' 
-                            className={`DashIcon ${currentIndex === index ? 'DashActive' : ''}`} 
+                            className={`DashIcon ${currentIndexRef.current === index ? 'DashActive' : ''}`} 
                         />
                     ))}
                 </div>
             </div>
             {
-                show ? <LoginForm /> : 
+                show ? 
+                <div className="SignInContainer LoginLeft">
+                    <form className='SignInForm LoginForm'>
+                        <h2 className='m-0'>Sign in</h2>
+                        <input type='email' value={email} placeholder='Email' required onChange={handleEmailChange} />
+                        <div className='PasswordContainer'>
+                            <input type={showPassword ? 'text' : 'password'} value={password} placeholder='Password' required onChange={handlePasswordChange} />
+                            <Icon 
+                                icon={showPassword ? 'material-symbols:visibility-off' : 'material-symbols:visibility'} 
+                                className='EyeIcon'
+                                onClick={TogglePassword}
+                            />
+                        </div>
+                        <button className='ButtonStyle CreateAccount' onClick={handleSubmit}>Sign in</button>
+                        <span className='cursor-pointer Account'>Forgot password?</span>
+                        <span className='cursor-pointer Account' onClick={() => setShow(false)}>Don't have an account? <a>Create account</a></span>
+                    </form>
+                </div>
+                : 
                 <div className='LoginLeft'>
                     <button className='LoginButton cursor-pointer' onClick={() => navigate('/')}>
                         <Icon icon='material-symbols-light:arrow-back-2-rounded' className='Icon' /> 
                         Back to website
                     </button>
                     <h2 className='m-0'>Create an account</h2>
-                    <span className='cursor-pointer Account' onClick={() => setShow(true)}>Already have an account? <a >Login</a></span>
+                    <span className='cursor-pointer Account' onClick={() => setShow(true)}>Already have an account? <a>Login</a></span>
                     <form className='LoginForm' onSubmit={(e) => { e.preventDefault(); console.log("Form submitted"); }}>
                         <div className='DetailsContainer'>
                             <input type='text' placeholder='Name' required />
