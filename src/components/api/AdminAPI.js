@@ -9,7 +9,7 @@ import { setLoggedIn, setToken, setUserDetails } from "../redux/reducer/userSlic
 
 function AdminAPI() {
 
-    const URL = "http://localhost:8080/api/v1"
+    const URL = "http://128.199.104.109/api/v1"
 
     const [ loading, setLoading ] = useState(false)
     const userDetails = useSelector((state) => state.user.userDetails);
