@@ -6,6 +6,7 @@ import Loading from "../common/Loading";
 
 // importing API
 import AdminAPI from '../api/AdminAPI';
+import User from "../api/User";
 
 // importing styles
 import '../../assests/styles/common.css';
@@ -16,6 +17,7 @@ import ListItems from '../../assests/data/ListItems.json';
 function Admin() {
 
     const { adminForm } = ListItems;
+    const { handleLogout } = User();
     const { handleCategoryUpload, handleProductUpload, loading } = AdminAPI();
 
     const [ selectedForm, setSelectedForm ] = useState('');
@@ -86,7 +88,10 @@ function Admin() {
   return (
     <div className="AdminContainer">
         {loading && <Loading />}
-        <h1>Admin</h1>
+        <div className="HeadingForm">
+            <h1>Admin</h1>
+            <button onClick={handleLogout}>Logout</button>
+        </div>
         <Select placeholder="Select form" size="sm" width="320px" onChange={(e) => setSelectedForm(e.target.value)}>
             {adminForm.map((framework) => (
             <option key={framework.value} value={framework.value}>
