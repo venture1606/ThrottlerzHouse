@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useRef } from "react";
+import { useSelector } from "react-redux";
 
-import Navbar from "../common/Navbar";
 import Card from "../common/Card";
+import User from "../api/User";
+import Loading from "../common/Loading";
 
 // importing images
 import offer from "../../assests/images/offer.jpg";
@@ -14,12 +15,20 @@ import ListItems from "../../assests/data/ListItems.json";
 import "../../assests/styles/category.css"; // Ensure styles are linked
 
 const Category = () => {
-  const navigate = useNavigate();
-  const { cards } = ListItems;
+  
+    const products = useSelector((state) => state.category.products);
 
-  useEffect(() => {
+    const { loading, handleProductDetails } = User();
+    const fetchRef =useRef(false);
+
+    useEffect(() => {
+    if (!fetchRef.current) {
+        handleProductDetails();
+        fetchRef.current = true;
+    }
     window.scrollTo(0, 0);
-  }, []);
+    }, []);
+
 
   return (
     <div className="CategoryPage">
@@ -100,8 +109,10 @@ const Category = () => {
 
         {/* Category Grid */}
         <div className="CategoryGrid">
+                {loading && <Loading />}
+            
             {
-                cards.map((card) => (
+                products.map((card) => (
                     <Card key={card.id} card={card} />
                 ))
             }

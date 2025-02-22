@@ -1,13 +1,23 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Icon } from '@iconify/react/dist/iconify.js'
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom'
+
+// Importing the custom hooks
+import User from '../api/User'
 
 // Importing the data
 import ListItems from '../../assests/data/ListItems.json'
 
 function ProductMobileHome() {
+  const navigate = useNavigate();
+  const { loading, handleCategoryDetails } = User();
 
+  const categories = useSelector((state) => state.category.categories);
+  
   const { product } = ListItems; // Destructuring the data
   const listRef = useRef(null); // Reference for the scrollable container
+  const fetchedRef = useRef(false);
 
   const scrollByCards = (numCards) => {
     const cardWidth = 250; // Width of each card (from CSS)
@@ -31,6 +41,13 @@ function ProductMobileHome() {
     }
   };
 
+  useEffect(() => {
+    if (!fetchedRef.current) {
+      handleCategoryDetails();
+      fetchedRef.current = true; // Prevent further API calls
+    }
+  }, []);
+
   return (
     <div className='ProductMobileHomeContainer'>
       <button className='SliderMobileButton ButtonStyle left' onClick={scrollLeft}>
@@ -38,18 +55,18 @@ function ProductMobileHome() {
       </button>
       <div className='ProductMobileListContainer' ref={listRef}>
         {
-          product.map((item, index) => (
-            <div className='ProductMobileCard cursor-pointer' key={index} 
+          categories.map((item, index) => (
+            <div 
+              className='ProductMobileCard cursor-pointer' key={index} 
               style={{
-                    backgroundImage: `url(${item.image})`,
+                    backgroundImage: `url(${item.image.url})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                 }}
+                onClick={() => navigate('/category')}
             >
-                {/* <img src={item.image} alt={item.name} /> */}
                 <h3>{item.name}</h3>
-                <p>{item.count} products available</p>
-                {/* <p>{item.description}</p> */}
+                <p>{item.productsCount} products available</p>
             </div>
           ))
         }

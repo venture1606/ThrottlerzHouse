@@ -45,12 +45,6 @@
     gap: 1rem;
 }
 
-.AdminFormContainer h1{
-    font-size: 2rem;
-    color: var(--text-color);
-    text-align: center;
-}
-
 .AdminFormContainer input{
     padding: 0.5rem 1rem;
     border: 1px solid var(--border-color);
@@ -65,7 +59,18 @@
     color: var(--text-color);
 }
 
-.AdminFormContainer button{
+.HeadingForm {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+}
+
+.HeadingForm h1{
+    font-size: 2rem;
+    color: var(--text-color);
+}
+
+.HeadingForm button, .AdminFormContainer button{
     padding: 0.5rem 1rem;
     border: 0;
     background-color: var(--secondary-color);
@@ -77,7 +82,7 @@
     width: fit-content;
 }
 
-.AdminFormContainer button:hover{
+.HeadingForm button:hover{
     background-color: var(--third-color);
 }
 
@@ -107,4 +112,26 @@
     height: 100px;
     border-radius: 100%;
     object-fit: cover;
+}
+
+.ProfileContentContainer button{
+    padding: 0.5rem 1rem;
+    border: 0;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.4s ease;
+    width: fit-content;
+}
+
+.ProfileContentContainer button:hover{
+    background-color: var(--third-color);
+}
+
+@media screen and (max-width: 991px){
+    .ProfileContainer{
+        padding: 4rem 1rem;
+    }
 }

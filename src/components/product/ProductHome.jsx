@@ -1,15 +1,23 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
+import User from '../api/User';
+
+// importing styles
 import '../../assests/styles/product.css';
-import ListItems from '../../assests/data/ListItems.json';
 
 function ProductHome() {
 
     const navigate = useNavigate();
-    const { product } = ListItems;
+    const { loading, handleCategoryDetails } = User();
+
+    const categories = useSelector((state) => state.category.categories);
     const listRef = useRef(null); // Reference for the scrollable container
+    const fetchedRef = useRef(false);
+
+    console.log(categories);
 
     const scrollByCards = (numCards) => {
         const cardWidth = 250; // Width of each card (from CSS)
@@ -30,23 +38,30 @@ function ProductHome() {
         listRef.current.scrollBy({ left: distance, behavior: 'smooth' });
     };
 
+    useEffect(() => {
+        if (!fetchedRef.current) {
+            handleCategoryDetails();
+            fetchedRef.current = true; // Prevent further API calls
+        }
+    }, []);
+
     return (
         <div className='ProductHomeContainer'>
             <button className='SliderButton ButtonStyle left' onClick={scrollLeft}>
                 <Icon icon="eva:arrow-left-fill" className='Icon' />
             </button>
             <div className='ProductListContainer' ref={listRef}>
-                {product.map((item, index) => (
+                {categories.map((item, index) => (
                     <div className='ProductCard cursor-pointer' key={index}
                       style={{
-                            backgroundImage: `url(${item.image})`,
+                            backgroundImage: `url(${item.image.url})`,
                             backgroundSize: 'cover',
                             backgroundPosition: 'center',
                         }}
                         onClick={() => navigate('/category')}
                     >
                         <h3>{item.name}</h3>
-                        <p>{item.count} products available</p>
+                        <p>{item.productsCount} products available</p>
                     </div>
                 ))}
             </div>

@@ -1,23 +1,34 @@
-import React, { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, { useEffect, useRef } from 'react'
+import { useSelector } from 'react-redux';
 
 // importing components
 import Card from '../common/Card'
+import User from "../api/User";
+import Loading from '../common/Loading';
+
 
 // importing data
 import ListItems from '../../assests/data/ListItems.json'
 
 function CategoryMobile() {
 
-    const navigate = useNavigate();
-    const { cards } = ListItems;
+  const { loading, handleProductDetails } = User();
+  const products = useSelector((state) => state.category.products);
+
+  const fetchedRef = useRef(false);
 
   useEffect(() => {
+    if (!fetchedRef.current) {
+      handleProductDetails();
+      fetchedRef.current = true;
+    }
+
     window.scrollTo(0, 0);
   }, []);
 
   return (
     <div className='CategoryMobileContainer'>
+        {loading && <Loading />}
         <h1>ALL CATEGORIES</h1>
         
         <nav className="navbar CategoryNavbarContainer">
@@ -83,7 +94,7 @@ function CategoryMobile() {
         
         <div className="CategoryGrid">
             {
-                cards.map((card) => (
+                products.map((card) => (
                     <Card key={card.id} card={card} />
                 ))
             }
