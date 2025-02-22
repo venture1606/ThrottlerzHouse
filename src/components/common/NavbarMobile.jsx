@@ -40,6 +40,7 @@ function NavbarMobile({ onNavigate }) {
     { icon: "material-symbols:media-link-outline-rounded", onClick: () => handleNavigate('/', 'productHome') },
     { icon: "iconamoon:category-light", onClick: () => handleNavigate('/', 'blogs') },
     { icon: "mdi:help-outline", onClick: () => handleNavigate('/', 'help') },
+    { icon: "mdi:mechanic", onClick: () => handleNavigate('/', 'services') },
     { icon: "ic:baseline-whatsapp", onClick: () => window.open('https://wa.me/918248897561', '_blank') },
   ];
 

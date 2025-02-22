@@ -1,10 +1,13 @@
 import React, { useRef } from 'react';
 import { Icon } from '@iconify/react/dist/iconify.js';
+import { useNavigate } from 'react-router-dom';
 
 import '../../assests/styles/product.css';
 import ListItems from '../../assests/data/ListItems.json';
 
 function ProductHome() {
+
+    const navigate = useNavigate();
     const { product } = ListItems;
     const listRef = useRef(null); // Reference for the scrollable container
 
@@ -15,6 +18,7 @@ function ProductHome() {
 
         return scrollDistance;
     };
+
 
     const scrollLeft = () => {
         const distance = scrollByCards(4); // Scroll by 4 cards
@@ -39,11 +43,10 @@ function ProductHome() {
                             backgroundSize: 'cover',
                             backgroundPosition: 'center',
                         }}
+                        onClick={() => navigate('/category')}
                     >
-                        {/* <img src={item.image} alt={item.name} /> */}
                         <h3>{item.name}</h3>
                         <p>{item.count} products available</p>
-                        {/* <p>{item.description}</p> */}
                     </div>
                 ))}
             </div>

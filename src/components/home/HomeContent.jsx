@@ -6,6 +6,7 @@ import Home from "./Home";
 import ProductHome from "../product/ProductHome";
 import Blogs from "../blogs/Blogs";
 import Help from "../help/Help";
+import ServicesHome from "../service/ServicesHome";
 
 import "../../assests/styles/home.css";
 
@@ -17,6 +18,7 @@ const HomeContent = () => {
   const productsRef = useRef(null);
   const blogsRef = useRef(null);
   const helpRef = useRef(null);
+  const servicesRef = useRef(null);
 
   // Scroll to the correct section when navigated back
   useEffect(() => {
@@ -26,6 +28,7 @@ const HomeContent = () => {
         productHome: productsRef,
         blogs: blogsRef,
         help: helpRef,
+        services: servicesRef,
       };
 
       sections[location.state.scrollTo]?.current?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -48,6 +51,11 @@ const HomeContent = () => {
       {/* Blogs Section */}
       <div id="blogs" ref={blogsRef}>
         <Blogs />
+      </div>
+
+      {/* Services Section */}
+      <div id="services" ref={servicesRef}>
+        <ServicesHome />
       </div>
 
       {/* Help Section */}

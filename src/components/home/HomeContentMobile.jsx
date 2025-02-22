@@ -5,6 +5,7 @@ import HomeMobile from './HomeMobile';
 import BlogsMobile from '../blogs/BlogsMobile';
 import ProductMobileHome from '../product/ProductMobileHome'
 import HelpMobile from '../help/HelpMobile';
+import ServicesHome from '../service/ServicesHome';
 
 function HomeContentMobile() {
 
@@ -14,6 +15,7 @@ function HomeContentMobile() {
     const productsRef = useRef(null);
     const blogsRef = useRef(null);
     const helpRef = useRef(null);
+    const servicesRef = useRef(null);
 
     useEffect(() => {
         if (location.state?.scrollTo) {
@@ -22,6 +24,7 @@ function HomeContentMobile() {
             productHome: productsRef,
             blogs: blogsRef,
             help: helpRef,
+            services: servicesRef,
           };
     
           sections[location.state.scrollTo]?.current?.scrollIntoView({ behavior: "smooth" });
@@ -38,6 +41,9 @@ function HomeContentMobile() {
         </div>
         <div id='blogs' ref={blogsRef}>
             <BlogsMobile />
+        </div>
+        <div id='services' ref={servicesRef}>
+            <ServicesHome />
         </div>
         <div id='help' ref={helpRef}>
             <HelpMobile />

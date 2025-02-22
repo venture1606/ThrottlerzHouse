@@ -9,6 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 // Importing assets
 import Logo from "../../assests/images/navbarlogo.png";
+import TitleLogo from "../../assests/images/title.png";
 import Bike from "../../assests/data/Bike.json";
 import "../../assests/styles/navbar.css";
 import SearchBar from "./SearchBar"
@@ -191,27 +192,32 @@ const Navbar = () => {
       </div>
 
       {/* Navigation Links */}
-      <div className="HeaderContainer">
-        <nav ref={navRef}>
-          <ul>
-            <li>
-              <button onClick={() => handleNavigate("/", "productHome")}>CATEGORY</button>
-            </li>
-            <li>
-              <button onClick={() => navigate("/category")}>PRODUCTS</button>
-            </li>
-            <li>
-              <button onClick={() => handleNavigate("/", "blogs")}>BLOGS</button>
-            </li>
-            <li>
-              <button onClick={() => navigate("/service")}>SERVICES</button>
-            </li>
-            <li>
-              <button onClick={() => handleNavigate("/", "help")}>CONTACT</button>
-            </li>
-          </ul>
-          <div ref={activeElementRef} className="active-element"></div>
-        </nav>
+      <div className="CenterContainer">
+        <div className="CenterImageContainer">
+          <img src={TitleLogo} alt="logo" />
+        </div>
+        <div className="HeaderContainer">
+          <nav ref={navRef}>
+            <ul>
+              <li>
+                <button onClick={() => handleNavigate("/", "productHome")}>CATEGORY</button>
+              </li>
+              <li>
+                <button onClick={() => navigate("/category")}>PRODUCTS</button>
+              </li>
+              <li>
+                <button onClick={() => handleNavigate("/", "blogs")}>BLOGS</button>
+              </li>
+              <li>
+                <button onClick={() => handleNavigate("/", "services")}>SERVICES</button>
+              </li>
+              <li>
+                <button onClick={() => handleNavigate("/", "help")}>CONTACT</button>
+              </li>
+            </ul>
+            <div ref={activeElementRef} className="active-element"></div>
+          </nav>
+        </div>
       </div>
 
       {/* Search, Cart & User Icons */}

@@ -8,12 +8,17 @@ import '../../assests/styles/login.css';
 
 function Login() {
     const navigate = useNavigate();
-    const { handleLogin, loading } = User();
+    const { handleLogin, loading, handleRegister } = User();
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const [show, setShow] = useState(false);
+    
+    const [ email, setEmail ] = useState('');
+    const [ password, setPassword ] = useState('');
+    const [ name, setName ] = useState('');
+    const [ phone, setPhone ] = useState('');
+    const [ bikeName, setBikeName ] = useState('');
+    const [ confirmPassword, setConfirmPassword ] = useState('');
 
     const currentIndexRef = useRef(0);
     const intervalRef = useRef(null);
@@ -56,8 +61,19 @@ function Login() {
         }, 1000);
     };
 
+    const EmptyValues = () => {
+        setEmail(''); 
+        setPassword('');
+        setShow(!show);
+    }
+
     const handleEmailChange = (e) => setEmail(e.target.value);
     const handlePasswordChange = (e) => setPassword(e.target.value);
+    const handleNameChange = (e) => setName(e.target.value);
+    const handlePhoneChange = (e) => setPhone(e.target.value);
+    const handleBikeNameChange = (e) => setBikeName(e.target.value);
+    const handleConfirmPasswordChange = (e) => setConfirmPassword(e.target.value);
+
     const TogglePassword = () => setShowPassword(!showPassword);
 
     const handleSubmit = (e) => {
@@ -67,6 +83,17 @@ function Login() {
         setEmail('');
         setPassword('');
     };
+
+    const handleRegisterSubmit = (e) => {
+        e.preventDefault();
+
+        if (password !== confirmPassword) {
+            alert('Passwords do not match');
+            return;
+        }
+
+        handleRegister({ email, password, name, phone, bikeName });
+    }
 
     return (
         <div className='LoginContainer'>
@@ -117,23 +144,24 @@ function Login() {
                         Back to website
                     </button>
                     <h2 className='m-0'>Create an account</h2>
-                    <span className='cursor-pointer Account' onClick={() => setShow(true)}>Already have an account? <a>Login</a></span>
+                    <span className='cursor-pointer Account' onClick={EmptyValues}>Already have an account? <a>Login</a></span>
                     <form className='LoginForm' onSubmit={(e) => { e.preventDefault(); console.log("Form submitted"); }}>
                         <div className='DetailsContainer'>
-                            <input type='text' placeholder='Name' required />
-                            <input type='tel' placeholder='Eg: 1234567890' pattern='[0-9]{10}' title='Enter a valid phone number' required />
+                            <input type='text' placeholder='Name' required value={name} onChange={handleNameChange}/>
+                            <input type='tel' placeholder='Eg: 1234567890' pattern='[0-9]{10}' title='Enter a valid phone number' required value={phone} onChange={handlePhoneChange}/>
                         </div>
-                        <input type='email' placeholder='Email' required />
+                        <input type='email' placeholder='Email' required value={email} onChange={handleEmailChange}/>
+                        <input type='text' placeholder='Your Bike Name' required value={bikeName} onChange={handleBikeNameChange} />
                         <div className='PasswordContainer'>
-                            <input type={showPassword ? 'text' : 'password'} placeholder='Enter your password' required />
+                            <input type={showPassword ? 'text' : 'password'} placeholder='Enter your password' required value={password} onChange={handlePasswordChange}/>
                             <Icon 
                                 icon={showPassword ? 'mdi:eye-off' : 'mdi:eye'} 
                                 className='EyeIcon'
                                 onClick={TogglePassword}
                             />    
                         </div>
-                        <input type={showPassword ? 'text' : 'password'} placeholder='Confirm password' required />
-                        <button type='submit' className='ButtonStyle CreateAccount'>Create account</button>
+                        <input type={showPassword ? 'text' : 'password'} placeholder='Confirm password' required value={confirmPassword} onChange={handleConfirmPasswordChange} />
+                        <button onClick={handleRegisterSubmit} className='ButtonStyle CreateAccount'>Create account</button>
                         <div className='OrContainer'>
                             <hr/>
                             <span> or Register with </span>

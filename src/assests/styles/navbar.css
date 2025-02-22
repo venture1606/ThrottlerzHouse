@@ -7,7 +7,7 @@
     justify-content: space-between;
     align-items: center;
     background-color: var(--fourth-color);
-    padding: 8px 5px;
+    padding: 8px 0px;
 	z-index: 1000;
 }
 
@@ -21,7 +21,6 @@
 /*----------bootstrap-navbar-css------------*/
 .NavbarLogoContainer{
 	padding-left: 15px;
-	color: #fff;
 	display: flex;
 }
 
@@ -43,7 +42,6 @@
 nav {
     position: relative;
     z-index: 1;
-    padding-right: 140px;
 }
 
 nav ul {
@@ -157,11 +155,25 @@ nav.before .active-element {
     transform: rotateY(180deg);
 }
 
+.CenterContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-right: 5rem;
+}
+
+.CenterImageContainer img{
+    width: auto;
+    height: 50px;
+}
+
 .HeaderContainer {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     font-family: "Syne", serif, sans-serif;
     font-weight: 600;
+    width: fit-content;
 }
 
 .HeaderContainer {

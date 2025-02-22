@@ -18,8 +18,14 @@ import HomeContentMobile from './components/home/HomeContentMobile';
 import Login from './components/login/Login';
 import LoginMobile from './components/login/LoginMobile';
 
+import Profile from './components/login/Profile';
+import Admin from './components/login/Admin';
+
 import Order from './components/order/Order';
 import OrderMobile from './components/order/OrderMobile';
+
+import Services from './components/service/Services';
+import ServicesMobile from './components/service/ServicesMobile';
 
 import Navbar from './components/common/Navbar';
 import Indication from './components/common/Indication';
@@ -33,6 +39,7 @@ function App() {
 
   const mode = useSelector((state) => state.message.mode);
   const message = useSelector((state) => state.message);
+  const userDetails = useSelector((state) => state.user.userDetails);
   const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
 
   const isMobile = useBreakpointValue({ base: true, lg: false });
@@ -50,10 +57,18 @@ function App() {
       <Routes>
         <Route path='/' element={isMobile ? <HomeContentMobile /> : <HomeContent />}/>
         <Route path='/product' element={ isMobile ? <ProductMobile /> : <Product />} />
-        <Route path='/login' element={isMobile ? <LoginMobile /> : <Login />} />
         <Route path='/category' element={isMobile ? <CategoryMobile /> : <Category />} />
         <Route path='/cart' element={isMobile ? <CartMobile /> : <Cart />} /> 
         <Route path='/order' element={isMobile ? <OrderMobile /> : <Order />} />
+        <Route path='/service' element={isMobile ? <ServicesMobile /> : <Services />} />
+
+        <Route path='/login' element={
+          isLoggedIn ? (
+            userDetails?.role === 'admin' || userDetails?.role === 'member' ? <Admin /> : <Profile />
+          ) : (
+            isMobile ? <LoginMobile /> : <Login />
+          )
+        } />
       </Routes>
 
       <Indication message={message} />
