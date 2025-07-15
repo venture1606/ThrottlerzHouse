@@ -6,6 +6,9 @@ import ListItems from '../../assests/data/ListItems'
 function Services() {
 
     const { services } = ListItems;
+
+    // Getting back to top of the page scroll bar
+    window.scrollTo(0, 0);
  
   return (
     <div className='ServicesContainer'>

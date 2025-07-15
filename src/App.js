@@ -56,7 +56,7 @@ function App() {
 
       <Routes>
         <Route path='/' element={isMobile ? <HomeContentMobile /> : <HomeContent />}/>
-        <Route path='/product' element={ isMobile ? <ProductMobile /> : <Product />} />
+        <Route path='/product/:id' element={ isMobile ? <ProductMobile /> : <Product />} />
         <Route path='/category' element={isMobile ? <CategoryMobile /> : <Category />} />
         <Route path='/cart' element={isMobile ? <CartMobile /> : <Cart />} /> 
         <Route path='/order' element={isMobile ? <OrderMobile /> : <Order />} />

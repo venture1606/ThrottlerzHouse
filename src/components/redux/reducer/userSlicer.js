@@ -15,12 +15,15 @@ const userSlice = createSlice({
       state.isLoggedIn = action.payload;
       localStorage.setItem('isLoggedIn', action.payload ? 'true' : 'false');
     },
+    
     setToken(state, action) {
       state.token = action.payload;
     },
+
     setUserDetails(state, action) {
       state.userDetails = action.payload;
     },
+
     logout(state) {
       state.isLoggedIn = false;
       state.token = null;

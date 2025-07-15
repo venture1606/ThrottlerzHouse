@@ -18,17 +18,18 @@ const Category = () => {
   
     const products = useSelector((state) => state.category.products);
 
-    const { loading, handleProductDetails } = User();
-    const fetchRef =useRef(false);
+    const { loading, handleProductDetails, handleGettingCart, handleGetWishlist } = User();
+    const fetchRef = useRef(false);
 
     useEffect(() => {
-    if (!fetchRef.current) {
-        handleProductDetails();
-        fetchRef.current = true;
-    }
-    window.scrollTo(0, 0);
+        if (!fetchRef.current) {
+            handleProductDetails();
+            handleGettingCart();
+            handleGetWishlist();
+            fetchRef.current = true;
+        }
+        window.scrollTo(0, 0);
     }, []);
-
 
   return (
     <div className="CategoryPage">

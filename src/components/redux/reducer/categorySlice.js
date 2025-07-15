@@ -2,7 +2,10 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     categories: [],
-    products: []
+    products: [],
+    singleProduct: {},
+    cartList : [],
+    wishList: [],
 };
 
 export const categorySlice = createSlice({
@@ -14,10 +17,25 @@ export const categorySlice = createSlice({
         },
         setProducts: (state, action) => {
             state.products = action.payload.products;
-        }
+        },
+        setSingleProduct: (state, action) => {
+            state.singleProduct = action.payload;
+        },
+        setCartList: (state, action) => {
+            state.cartList = action.payload;
+        },
+        setWishList: (state, action) => {
+            state.wishList = action.payload;
+        },
     }
 });
 
-export const { setCategories, setProducts } = categorySlice.actions;
+export const { 
+    setCategories, 
+    setProducts, 
+    setSingleProduct, 
+    setCartList,
+    setWishList
+} = categorySlice.actions;
 
 export default categorySlice.reducer;

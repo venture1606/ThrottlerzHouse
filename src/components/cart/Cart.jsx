@@ -1,22 +1,31 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 // importing components
 import Card from '../common/Card'
 
+// importing API
+import User from '../api/User'
+
 // importing styles
 import '../../assests/styles/cart.css'
 
-// importing data
-import ListItems from '../../assests/data/ListItems.json'
-
 function Cart() {
 
-    const { cards } = ListItems;
     const navigate = useNavigate();
+
+    const wishList = useSelector((state) => state.category.wishList);
+    const cartList = useSelector((state) => state.category.cartList);
+    
+    const { handleGettingCart, handleGetWishlist } = User();
 
     useEffect(() => {
         window.scrollTo(0, 0);
+        // Fetching the cart items when the component mounts
+        handleGettingCart();
+        // Fetching the wishlist items when the component mounts
+        handleGetWishlist();
     }, []);
 
   return (
@@ -25,10 +34,10 @@ function Cart() {
             <div className='UserCartContainer'>
                 <h3>Your Cart</h3>
                 <div className='CategoryGrid'>
-                    {/* show only if the cart is true */}
+                    {/* show only when cartList is not empty */}
                     {
-                        cards.map((item, index) => (
-                            item.cart && <Card key={item.id} card={item}/>
+                        cartList && cartList.map((item, index) => (
+                            item.product && <Card key={item.id} card={item.product}/>
                         ))
                     }
                 </div>
@@ -38,8 +47,8 @@ function Cart() {
                 <div className='CategoryGrid'>
                     {/* show only if the wishlist is true */}
                     {
-                        cards.map((item, index) => (
-                            item.wishlist ? <Card key={item.id} card={item}/> : null
+                        wishList && wishList.map((item, index) => (
+                            item && <Card key={item.id} card={item}/>
                         ))
                     }
                 </div>
@@ -48,7 +57,7 @@ function Cart() {
         <div className='BillingContainer'>
             <h3>Billing</h3>
             <div className='BillingDetailsContainer'>
-                <span>Subtotal (2 items): $1,000</span>
+                <span>Subtotal (${cartList.length} items): $1,000</span>
                 <span>Shipping: $10</span>
                 <hr className='m-0'/>
                 <h5>Total: $1,010</h5>

@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 // importing components
 import ReviewCard from "../common/ReviewCard";
 import StarRating from "../common/StarRating";
+import Loading from "../common/Loading";
 
 // importing Image
 import ProductImage from "../../assests/images/ProductImage.png";
@@ -14,9 +16,12 @@ import ListItems from "../../assests/data/ListItems.json";
 
 function Product() {
   const navigate = useNavigate();
+  const singleProduct = useSelector((state) => state.category.singleProduct);
+
   const { similarProducts, reviews } = ListItems;
 
   const [quantity, setQuantity] = useState(1);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [cart, setCart] = useState(true);
   const [wishlist, setWishlist] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState(null); // State to manage selected category
@@ -46,17 +51,31 @@ function Product() {
       setWishlist((prevWishlist) => !prevWishlist);
   }, []);
 
+  const handlePrevImage = () => {
+  setCurrentImageIndex((prevIndex) =>
+    prevIndex === 0 ? singleProduct.images.length - 1 : prevIndex - 1
+  );
+};
+
+const handleNextImage = () => {
+  setCurrentImageIndex((prevIndex) =>
+    prevIndex === singleProduct.images.length - 1 ? 0 : prevIndex + 1
+  );
+};
+
+
+  console.log("Single Product:", singleProduct);
+
   return (
     <div className="ProductReviewContainer">
+      {singleProduct && Object.keys(singleProduct).length === 0 && <Loading />}
       <div className="ProductContainer">
         <div className="ProductDetailsContainer">
           <div className="ProductContentContainer">
-            <h2>Apple Watch Series 7</h2>
+            <h2>{singleProduct.name}</h2>
             <div className="ProductDescriptionContainer">
               Product Description: <br />
-              The Apple Watch Series 7 is a powerful and stylish smartwatch that
-              offers a range of features, including GPS navigation, fitness
-              tracking, and health monitoring.
+              {singleProduct.description}
             </div>
             <div className="ProductCategoryContainer">
               <span>Smartwatches</span>
@@ -79,7 +98,7 @@ function Product() {
               Feature are briefly written below the page.
             </div>
             <span>
-              $399.00 <del>$499.00</del> <b>20% off</b> <br />
+              ${singleProduct.price} <del>{singleProduct.originalPrice}</del> <b>20% off</b> <br />
             </span>
             <div className="ProductRatingContainer">
               <button className="ButtonStyle">Write a review</button>
@@ -104,14 +123,23 @@ function Product() {
         </div>
         <div className="ProductImageContainer">
           <div className="ProductNavigationContainer">
-            <div className="ProductNavigationButton cursor-pointer ButtonStyle">
+            <div className="ProductNavigationButton cursor-pointer ButtonStyle" onClick={handlePrevImage}>
               <Icon icon="carbon:chevron-left" className="Icon" />
             </div>
-            <div className="ProductNavigationButton cursor-pointer ButtonStyle">
+            <div className="ProductNavigationButton cursor-pointer ButtonStyle" onClick={handleNextImage}>
               <Icon icon="carbon:chevron-right" className="Icon" />
             </div>
           </div>
-          <img src={ProductImage} alt="Product" />
+          
+          {singleProduct.images && singleProduct.images.length > 0 ? (
+            <img
+              src={singleProduct.images[currentImageIndex]?.url}
+              alt={`Product ${currentImageIndex + 1}`}
+            />
+          ) : (
+            <p>No image available</p>
+          )}
+
           <div className="ProductImageDetailsContainer">
             <div className="ProductImageDetailsRightContainer">
               <div className="QuantityContainer">
