@@ -14,6 +14,18 @@ export type Category = {
   productCount: number;
 };
 
+export type Service = {
+  id: string;
+  name: string;
+  eyebrow: string;
+  description: string;
+  image: string;
+  duration: string;
+  startingPrice: string;
+  inclusions: string[];
+  idealFor: string;
+};
+
 export type CartItem = {
   product: Product;
   quantity: number;

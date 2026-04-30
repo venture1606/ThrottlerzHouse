@@ -5,6 +5,7 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/category", label: "Category" },
   { href: "/products", label: "Products" },
+  { href: "/services", label: "Services" },
   { href: "/cart", label: "Cart" },
   { href: "/checkout", label: "Checkout" },
   { href: "/orders", label: "Orders" }

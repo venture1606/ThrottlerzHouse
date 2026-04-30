@@ -38,7 +38,7 @@ export function HomeHero() {
               <Link href="/products">Shop Products</Link>
             </Button>
             <Button asChild variant="outline" className="border-white/30 bg-transparent text-white hover:bg-white/10">
-              <Link href="/orders">Explore Services</Link>
+              <Link href="/services">Explore Services</Link>
             </Button>
           </div>
         </div>
