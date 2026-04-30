@@ -234,8 +234,8 @@ export function AuthModal({ open, onOpenChange }: AuthModalProps) {
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
         <Dialog.Content
-          className="fixed left-1/2 top-1/2 z-50 flex w-full max-w-md -translate-x-1/2 -translate-y-1/2 flex-col rounded-3xl border border-white/10 bg-slate-950 shadow-2xl shadow-black/60 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95"
-          style={{ maxHeight: "90dvh" }}
+          className="fixed left-1/2 top-1/2 z-50 flex w-full max-w-md -translate-x-1/2 -translate-y-1/2 flex-col overflow-hidden rounded-3xl border border-white/10 bg-slate-950 shadow-2xl shadow-black/60 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95"
+          style={{ maxHeight: "90vh" }}
           aria-describedby="auth-modal-description"
         >
           {/* ── Sticky Header (never scrolls away) ─────────────────────── */}
@@ -294,7 +294,7 @@ export function AuthModal({ open, onOpenChange }: AuthModalProps) {
           </div>
 
           {/* ── Scrollable form body ────────────────────────────────────── */}
-          <div className="flex-1 overflow-y-auto px-8 py-5 [scrollbar-width:thin] [scrollbar-color:rgba(249,115,22,0.5)_transparent]">
+          <div className="flex-1 min-h-0 overflow-y-auto px-8 py-5 [scrollbar-width:thin] [scrollbar-color:rgba(249,115,22,0.5)_transparent]">
             {tab === "login" ? (
               <LoginForm onSuccess={handleSuccess} />
             ) : (
