@@ -1,0 +1,22 @@
+{
+  "node": {
+    "2de0d25cb5049ba21de91a53d4605d1aab612a35": {
+      "workers": {
+        "app/checkout/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22A%3A%5C%5CThollerzHouse%5C%5Cwebsite%5C%5Csrc%5C%5Cactions%5C%5Ccheckout.ts%22%2C%5B%22checkoutSchema%22%2C%22submitOrder%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/checkout/page": "action-browser"
+      }
+    },
+    "e2279624086dd48dcc4b2caaa35bc6f327e02219": {
+      "workers": {
+        "app/checkout/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22A%3A%5C%5CThollerzHouse%5C%5Cwebsite%5C%5Csrc%5C%5Cactions%5C%5Ccheckout.ts%22%2C%5B%22checkoutSchema%22%2C%22submitOrder%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/checkout/page": "action-browser"
+      }
+    }
+  },
+  "edge": {},
+  "encryptionKey": "3NSOe+LvBiKhwHWe7iJhsOlWWDUzWb9G7mgT5MQjMFU="
+}

@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #090c11;
+  --surface: #111722;
+  --surface-soft: #181f2d;
+  --foreground: #f1f5f9;
+  --muted: #94a3b8;
+  --accent: #f97316;
+  --accent-strong: #ea580c;
+  --ring: #fb923c;
+}
+
+* {
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(249, 115, 22, 0.75) rgba(15, 23, 42, 0.45);
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.45);
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(251, 146, 60, 0.95), rgba(234, 88, 12, 0.95));
+  border-radius: 999px;
+  border: 2px solid rgba(15, 23, 42, 0.55);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(253, 186, 116, 0.95), rgba(249, 115, 22, 0.95));
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 15% -20%, rgba(249, 115, 22, 0.2), transparent 45%),
+    radial-gradient(circle at 85% 0%, rgba(59, 130, 246, 0.18), transparent 42%),
+    linear-gradient(180deg, #090c11 0%, #0d121a 100%);
+  color: var(--foreground);
+  font-family: var(--font-sans, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hero-image-slice {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  transform: translateX(-100%);
+  opacity: 0;
+  animation: tileSlideIn 0.9s ease-out forwards;
+}
+
+@keyframes tileSlideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
