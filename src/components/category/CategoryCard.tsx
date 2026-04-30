@@ -6,7 +6,7 @@ type CategoryCardProps = {
 
 export function CategoryCard({ category }: CategoryCardProps) {
   return (
-    <article className="group relative h-[450px] w-[360px] shrink-0 overflow-hidden rounded-2xl border border-white/15 bg-white text-slate-900 shadow-lg shadow-black/30">
+    <article className="group relative h-[450px] w-[360px] shrink-0 snap-start overflow-hidden rounded-2xl border border-white/15 bg-white text-slate-900 shadow-lg shadow-black/30">
       <div
         className="h-[320px] w-full bg-cover bg-center transition duration-500 group-hover:scale-105"
         style={{ backgroundImage: `url(${category.image})` }}
@@ -18,4 +18,3 @@ export function CategoryCard({ category }: CategoryCardProps) {
     </article>
   );
 }
-
