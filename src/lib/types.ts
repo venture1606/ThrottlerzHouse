@@ -3,8 +3,30 @@ export type Product = {
   name: string;
   description: string;
   price: number;
+  originalPrice: number;
   image: string;
-  category: "helmet" | "gloves" | "jacket" | "accessory";
+  images: ProductImage[];
+  category: string;
+  service: string;
+  brand: string;
+  model: string;
+  stock: number;
+  ratings: number;
+  numOfReview: number;
+  reviews: ProductReview[];
+  createdAt: string;
+};
+
+export type ProductImage = {
+  public_id: string;
+  url: string;
+};
+
+export type ProductReview = {
+  id: string;
+  name: string;
+  rating: number;
+  comment: string;
 };
 
 export type Category = {

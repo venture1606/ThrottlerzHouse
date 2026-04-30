@@ -17,6 +17,7 @@ import {
   ShoppingCart,
   Sparkles
 } from "lucide-react";
+import { TermsDialog } from "./TermsDialog";
 
 const quickLinks = [
   { href: "/", label: "Home", icon: Home },
@@ -148,10 +149,8 @@ export function Footer() {
             })}
           </div>
 
-          <div className="flex flex-wrap justify-center gap-x-3 gap-y-2 text-sm font-medium text-orange-300 lg:justify-end">
-            <Link href="/" className="underline-offset-4 hover:underline">
-              Terms and Conditions
-            </Link>
+          <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm font-medium text-orange-300 lg:justify-end">
+            <TermsDialog />
             <span className="text-orange-300/50">|</span>
             <Link href="/" className="underline-offset-4 hover:underline">
               Privacy Policy
