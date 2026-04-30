@@ -6,7 +6,7 @@ const NUM_TILES = 8;
 
 export function HomeHero() {
   return (
-    <section className="relative overflow-hidden rounded-3xl border border-white/10 bg-slate-900 text-white shadow-xl shadow-black/30">
+    <section className="relative overflow-hidden rounded-3xl border border-white/10 bg-slate-900 text-white shadow-xl shadow-black/30 h-[490px]">
       <div className="absolute inset-0">
         {Array.from({ length: NUM_TILES }).map((_, index) => (
           <div
