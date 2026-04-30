@@ -1,70 +1,97 @@
-# Getting Started with Create React App
+# Thollerz House
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Production-grade e-commerce application built with Next.js 14 App Router, TypeScript (strict), Tailwind CSS, Zustand, Stripe Checkout/Webhooks, NextAuth, Prisma, and Resend.
 
-## Available Scripts
+## Tech Stack
+- Next.js 14 (App Router)
+- TypeScript (strict)
+- Tailwind CSS
+- Zustand (cart state)
+- NextAuth v5
+- Stripe (Checkout + Webhooks)
+- Prisma + PostgreSQL
+- Resend (order confirmation email)
 
-In the project directory, you can run:
+## Project Structure
+```text
+src/
+  app/
+  components/
+    layout/
+    home/
+    products/
+    cart/
+    checkout/
+    orders/
+    ui/
+  lib/
+    data/
+  store/
+  hooks/
+  actions/
+  emails/
+prisma/
+  schema.prisma
+```
 
-### `npm start`
+## Prerequisites
+- Node.js 18+
+- npm 9+
+- PostgreSQL database
+- Stripe account
+- Resend account
+- Google OAuth app (for NextAuth Google provider)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Environment Setup
+1. Copy `.env.example` to `.env.local`
+2. Fill all values
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+cp .env.example .env.local
+```
 
-### `npm test`
+## Install
+```bash
+npm install
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Prisma
+Generate client and run migrations:
 
-### `npm run build`
+```bash
+npx prisma generate
+npx prisma migrate dev
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Run Dev Server
+```bash
+npm run dev
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Open `http://localhost:3000`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Quality Commands
+```bash
+npm run typecheck
+npm run lint
+npm run build
+```
 
-### `npm run eject`
+## Stripe Webhook (Local)
+Use Stripe CLI and forward events:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+stripe listen --forward-to localhost:3000/api/stripe/webhook
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Set `STRIPE_WEBHOOK_SECRET` from Stripe CLI output.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Auth-Protected Routes
+- `/orders`
+- `/orders/[id]`
+- `/account`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Notes
+- Keep all secrets server-side only.
+- Never commit `.env.local`.
+- Product pricing is calculated server-side in checkout route.

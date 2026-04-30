@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #111827;
+  --primary-hover: #1f2937;
+  --accent: #f59e0b;
+  --accent-light: #fef3c7;
+  --success: #10b981;
+  --danger: #ef4444;
+  --surface: #f9fafb;
+  --border: #e5e7eb;
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+  --text-muted: #9ca3af;
+  --stripe-blue: #635bff;
+  --background: 210 40% 98%;
+  --foreground: 222.2 84% 4.9%;
+}
+
+* {
+  @apply border-border;
+}
+
+body {
+  @apply bg-surface text-text-primary;
+}
